@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Health Plan Treasury Assessment — Lightning Strategies</title>
+<meta name="description" content="Answer 10 questions. Get a custom Bitcoin treasury model sized to your actual claims spend — delivered within 24 hours.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9889;</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4FMDQ41MK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4FMDQ41MK1');</script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#FF6200;--gold:#F7931A;--gold-dim:rgba(247,147,26,0.15);--gold-glow:rgba(247,147,26,0.22);
+  --black:#080808;--ink:#0D0D0D;--surface:#111111;--surface-2:#161616;--surface-3:#1C1C1C;
+  --border:#202020;--border-hi:#2C2C2C;--gray-mid:#505050;--gray-metal:#747474;--gray-light:#ABABAB;
+  --white:#FFFFFF;--off-white:#EEEEEE;--green:#43A047;--green-dim:rgba(67,160,71,0.12);--red:#E53935;
+  --font-display:'Bebas Neue',sans-serif;--font-cond:'Barlow Condensed',sans-serif;--font-body:'Barlow',sans-serif;
+  --radius:4px;--max:780px;--gutter:clamp(20px,5vw,40px);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--black);color:var(--off-white);font-family:var(--font-body);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{background:rgba(8,8,8,0.96);border-bottom:1px solid var(--border);padding:0 var(--gutter)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:var(--max);margin:0 auto}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:16px;letter-spacing:0.2em}
+.nav-logo span{color:var(--orange)}
+.nav-back{font-family:var(--font-cond);font-weight:600;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray-metal);transition:color 0.15s}
+.nav-back:hover{color:var(--gold)}
+
+/* LAYOUT */
+.page{max-width:var(--max);margin:0 auto;padding:48px var(--gutter) 80px}
+
+/* HEADER */
+.page-label{font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:8px;margin-bottom:16px}
+.page-label::before{content:'';display:block;width:20px;height:1.5px;background:var(--gold)}
+.page-title{font-family:var(--font-display);font-size:clamp(36px,6vw,56px);letter-spacing:0.06em;text-transform:uppercase;line-height:0.95;margin-bottom:16px}
+.page-title span{color:var(--gold)}
+.page-sub{font-size:15px;color:var(--gray-light);line-height:1.65;max-width:560px;margin-bottom:40px}
+.page-sub strong{color:var(--off-white)}
+
+/* PROGRESS */
+.progress-bar{display:flex;gap:6px;margin-bottom:40px}
+.progress-step{flex:1;height:3px;border-radius:2px;background:var(--border);transition:background 0.3s}
+.progress-step.active{background:var(--gold)}
+.progress-step.done{background:var(--orange)}
+.progress-label{font-family:var(--font-cond);font-weight:600;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray-metal);margin-bottom:8px}
+
+/* SECTIONS */
+.form-section{display:none}
+.form-section.active{display:block}
+.section-title{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+
+/* FIELDS */
+.field{margin-bottom:20px}
+.field label{display:block;font-family:var(--font-cond);font-weight:600;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);margin-bottom:8px}
+.field label .req{color:var(--gold)}
+.field .hint{font-family:var(--font-body);font-size:12px;letter-spacing:0;text-transform:none;font-weight:400;color:var(--gray-metal);display:block;margin-top:4px}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 16px;
+  background:var(--surface);border:1px solid var(--border-hi);border-radius:var(--radius);
+  color:var(--white);font-family:var(--font-body);font-size:15px;
+  transition:border-color 0.2s,box-shadow 0.2s;appearance:none;-webkit-appearance:none
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-dim)
+}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23747474' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;cursor:pointer}
+.field textarea{resize:vertical;min-height:80px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:520px){.field-row{grid-template-columns:1fr}}
+
+/* RADIO GROUP */
+.radio-group{display:flex;flex-direction:column;gap:8px}
+.radio-option{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;background:var(--surface);border:1px solid var(--border-hi);border-radius:var(--radius);cursor:pointer;transition:border-color 0.2s,background 0.2s}
+.radio-option:hover{border-color:var(--gold);background:var(--surface-2)}
+.radio-option input[type=radio]{display:none}
+.radio-option .radio-dot{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--gray-metal);flex-shrink:0;margin-top:2px;transition:border-color 0.2s,background 0.2s;background:transparent}
+.radio-option.selected{border-color:var(--gold);background:var(--surface-2)}
+.radio-option.selected .radio-dot{border-color:var(--gold);background:var(--gold)}
+.radio-label{font-size:14px;color:var(--off-white);line-height:1.4}
+.radio-label small{display:block;font-size:12px;color:var(--gray-metal);margin-top:2px}
+
+/* NAVIGATION BUTTONS */
+.form-nav{display:flex;justify-content:space-between;align-items:center;margin-top:32px;padding-top:24px;border-top:1px solid var(--border)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-weight:700;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;padding:13px 28px 11px;border-radius:var(--radius);cursor:pointer;transition:all 0.2s ease;border:none}
+.btn-primary{background:var(--gold);color:#000}
+.btn-primary:hover{background:#FFB347;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--gray-light);border:1.5px solid var(--border-hi)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn-submit{background:var(--orange);color:#000;font-size:13px;padding:16px 32px 14px;width:100%}
+.btn-submit:hover{background:#FF8040}
+.step-counter{font-family:var(--font-cond);font-weight:600;font-size:11px;letter-spacing:0.3em;color:var(--gray-metal)}
+
+/* SUCCESS */
+.success-wrap{display:none;text-align:center;padding:60px 0}
+.success-icon{font-size:48px;margin-bottom:24px}
+.success-title{font-family:var(--font-display);font-size:clamp(32px,5vw,48px);letter-spacing:0.06em;color:var(--gold);margin-bottom:16px}
+.success-body{font-size:16px;color:var(--gray-light);line-height:1.7;max-width:480px;margin:0 auto 32px}
+.success-body strong{color:var(--white)}
+
+/* TRUST BAR */
+.trust-strip{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:40px;padding:20px 24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}
+.trust-item{display:flex;align-items:center;gap:8px;font-family:var(--font-cond);font-weight:600;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray-metal)}
+.trust-dot{color:var(--gold)}
+
+/* WHAT YOU GET BOX */
+.deliverable-box{background:linear-gradient(135deg,rgba(247,147,26,0.07),rgba(255,98,0,0.04));border:1px solid rgba(247,147,26,0.3);border-radius:6px;padding:24px 28px;margin-bottom:40px}
+.deliverable-title{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.deliverable-list{list-style:none}
+.deliverable-list li{font-size:14px;color:var(--off-white);padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:flex-start;gap:10px}
+.deliverable-list li:last-child{border-bottom:none}
+.deliverable-list li::before{content:'\2192';color:var(--gold);font-size:14px;flex-shrink:0;margin-top:1px;font-weight:700}
+
+/* ERROR */
+.field-error{font-size:12px;color:var(--red);margin-top:6px;display:none}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--red)}
+.field.invalid .field-error{display:block}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <svg width="26" height="31" viewBox="0 0 192 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="nsb" x1="96" y1="62" x2="96" y2="222" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1E1E1E"/><stop offset="100%" stop-color="#080808"/></linearGradient>
+          <linearGradient id="nlk" x1="70" y1="20" x2="122" y2="68" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FFB347"/><stop offset="100%" stop-color="#C44D00"/></linearGradient>
+          <linearGradient id="nbolt" x1="84" y1="82" x2="110" y2="185" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F7931A"/></linearGradient>
+          <filter id="nbg"><feGaussianBlur stdDeviation="4" result="b"/><feColorMatrix in="b" type="matrix" values="1 0.5 0 0 0  0.5 0.3 0 0 0  0 0 0 0 0  0 0 0 0.65 0" result="c"/><feMerge><feMergeNode in="c"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <clipPath id="ncp"><path d="M96 62 L164 86 L164 152 Q164 200 96 220 Q28 200 28 152 L28 86 Z"/></clipPath>
+        </defs>
+        <path d="M70 66 L70 42 Q70 18 96 18 Q122 18 122 42 L122 66" stroke="url(#nlk)" stroke-width="13" stroke-linecap="round" fill="none"/>
+        <rect x="83" y="57" width="26" height="15" fill="#080808"/>
+        <path d="M96 62 L164 86 L164 152 Q164 200 96 220 Q28 200 28 152 L28 86 Z" fill="url(#nsb)"/>
+        <path d="M96 62 L164 86 L164 152 Q164 200 96 220 Q28 200 28 152 L28 86 Z" fill="none" stroke="#F7931A" stroke-width="1.8"/>
+        <g clip-path="url(#ncp)"><rect x="28" y="116" width="136" height="2.5" fill="#F7931A"/><rect x="35" y="124" width="122" height="2.5" fill="white" opacity="0.07"/><rect x="35" y="132" width="118" height="2.5" fill="white" opacity="0.06"/></g>
+        <g filter="url(#nbg)"><path d="M103 82 L77 142 L93 142 L86 186 L119 124 L102 124 L113 82 Z" fill="url(#nbolt)"/></g>
+      </svg>
+      LIGHTNING <span>STRATEGIES</span>
+    </div>
+    <a href="/" class="nav-back">&#8592; Back to Site</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- PAGE HEADER -->
+  <div class="page-label">Free Assessment</div>
+  <h1 class="page-title">HEALTH PLAN<br><span>TREASURY ASSESSMENT</span></h1>
+  <p class="page-sub">Tell us about your self-funded plan. <strong>We build a custom Bitcoin treasury model sized to your actual claims spend</strong> &#8212; showing exactly what a sovereign, self-custodied treasury would look like for your plan &#8212; and deliver it within 24 hours. No obligation. No pitch.</p>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-item"><span class="trust-dot">&#9679;</span> Delivered within 24 hours</div>
+    <div class="trust-item"><span class="trust-dot">&#9679;</span> No obligation</div>
+    <div class="trust-item"><span class="trust-dot">&#9679;</span> You own the treasury &amp; the keys</div>
+    <div class="trust-item"><span class="trust-dot">&#9679;</span> Work with your incumbent broker</div>
+  </div>
+
+  <!-- WHAT YOU GET -->
+  <div class="deliverable-box">
+    <div class="deliverable-title">What You Receive</div>
+    <ul class="deliverable-list">
+      <li>Inflation gap analysis — your 3-year trend vs. your current reserve yield, dollar for dollar</li>
+      <li>Bitcoin treasury size recommendation scaled to your annual claims spend (not a generic number)</li>
+      <li>BLOC credit facility illustration — how you draw fiat for claims without selling Bitcoin</li>
+      <li>5-year projection: what the treasury could be worth vs. where your claims trend is heading</li>
+      <li>Implementation readiness score + recommended next steps</li>
+    </ul>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-label">Step <span id="stepLabel">1</span> of 4</div>
+  <div class="progress-bar">
+    <div class="progress-step active" id="ps1"></div>
+    <div class="progress-step" id="ps2"></div>
+    <div class="progress-step" id="ps3"></div>
+    <div class="progress-step" id="ps4"></div>
+  </div>
+
+  <!-- FORM -->
+  <form id="assessmentForm" novalidate>
+
+    <!-- SECTION 1: CONTACT + PLAN PROFILE -->
+    <div class="form-section active" id="section1">
+      <div class="section-title">01 — Contact &amp; Plan Profile</div>
+
+      <div class="field-row">
+        <div class="field" id="f-name">
+          <label>Full Name <span class="req">*</span></label>
+          <input type="text" id="leadName" placeholder="Jane Smith" autocomplete="name" required>
+          <span class="field-error">Required</span>
+        </div>
+        <div class="field" id="f-title">
+          <label>Your Title</label>
+          <input type="text" id="leadTitle" placeholder="CFO, VP Finance, Owner...">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field" id="f-email">
+          <label>Work Email <span class="req">*</span></label>
+          <input type="email" id="leadEmail" placeholder="jane@company.com" autocomplete="email" required>
+          <span class="field-error">Valid email required</span>
+        </div>
+        <div class="field" id="f-phone">
+          <label>Phone (optional)</label>
+          <input type="tel" id="leadPhone" placeholder="(555) 000-0000">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field" id="f-company">
+          <label>Company Name <span class="req">*</span></label>
+          <input type="text" id="leadCompany" placeholder="Acme Corp" required>
+          <span class="field-error">Required</span>
+        </div>
+        <div class="field">
+          <label>Industry / Sector</label>
+          <select id="leadIndustry">
+            <option value="">Select industry</option>
+            <option>Manufacturing</option>
+            <option>Distribution / Logistics</option>
+            <option>Healthcare / Medical</option>
+            <option>Construction / Trades</option>
+            <option>Professional Services</option>
+            <option>Retail / Hospitality</option>
+            <option>Technology</option>
+            <option>Education</option>
+            <option>Nonprofit</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field" id="f-size">
+          <label>Enrolled Employees <span class="req">*</span></label>
+          <select id="planSize" required>
+            <option value="">Select range</option>
+            <option value="200-349">200&#8211;349</option>
+            <option value="350-499">350&#8211;499</option>
+            <option value="500-749">500&#8211;749</option>
+            <option value="750-999">750&#8211;999</option>
+            <option value="1000+">1,000+</option>
+          </select>
+          <span class="field-error">Required</span>
+        </div>
+        <div class="field">
+          <label>Plan Type <span class="req">*</span></label>
+          <select id="planType" required>
+            <option value="">Select type</option>
+            <option value="self-funded">Self-funded (ASO)</option>
+            <option value="level-funded">Level-funded</option>
+            <option value="both">Both (multiple plans)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Plan Anniversary / Renewal Month</label>
+          <select id="planRenewal">
+            <option value="">Select month</option>
+            <option>January</option><option>February</option><option>March</option>
+            <option>April</option><option>May</option><option>June</option>
+            <option>July</option><option>August</option><option>September</option>
+            <option>October</option><option>November</option><option>December</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Incumbent Benefits Broker (optional)</label>
+          <input type="text" id="planBroker" placeholder="e.g. Marsh McLennan, Gallagher, WTW...">
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <span class="step-counter">Step 1 of 4</span>
+        <button type="button" class="btn btn-primary" onclick="nextSection(1)">Next &#8594;</button>
+      </div>
+    </div>
+
+    <!-- SECTION 2: CLAIMS & COST DATA -->
+    <div class="form-section" id="section2">
+      <div class="section-title">02 — Claims &amp; Cost Data</div>
+
+      <div class="field" id="f-claims">
+        <label>Annual Total Claims Paid (last plan year) <span class="req">*</span>
+          <span class="hint">This is the most important number — it determines how we size the treasury model for you.</span>
+        </label>
+        <select id="annualClaims" required>
+          <option value="">Select range</option>
+          <option value="under-2m">Under $2M</option>
+          <option value="2m-4m">$2M &#8211; $4M</option>
+          <option value="4m-6m">$4M &#8211; $6M</option>
+          <option value="6m-9m">$6M &#8211; $9M</option>
+          <option value="9m-15m">$9M &#8211; $15M</option>
+          <option value="15m-25m">$15M &#8211; $25M</option>
+          <option value="25m+">$25M+</option>
+          <option value="unsure">I'd need to look this up</option>
+        </select>
+        <span class="field-error">Required for your custom model</span>
+      </div>
+
+      <div class="field">
+        <label>Medical Cost Trend — Last 3 Years
+          <span class="hint">Approximate annual increase in claims cost per employee.</span>
+        </label>
+        <div class="radio-group" id="rg-trend">
+          <label class="radio-option" onclick="selectRadio(this,'costTrend','under5')">
+            <input type="radio" name="costTrend" value="under5"><div class="radio-dot"></div>
+            <span class="radio-label">Under 5% <small>Better than average — still losing to healthcare inflation</small></span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'costTrend','5-7')">
+            <input type="radio" name="costTrend" value="5-7"><div class="radio-dot"></div>
+            <span class="radio-label">5&#8211;7% <small>Near the national average claims trend</small></span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'costTrend','7-10')">
+            <input type="radio" name="costTrend" value="7-10"><div class="radio-dot"></div>
+            <span class="radio-label">7&#8211;10% <small>Above average — reserves are losing ground quickly</small></span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'costTrend','10plus')">
+            <input type="radio" name="costTrend" value="10plus"><div class="radio-dot"></div>
+            <span class="radio-label">10%+ <small>High trend — likely driven by large claimants or specialty drugs</small></span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'costTrend','unsure')">
+            <input type="radio" name="costTrend" value="unsure"><div class="radio-dot"></div>
+            <span class="radio-label">Unsure — I'd need to pull the renewal analysis</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Specific Stop-Loss Attachment Point</label>
+          <select id="stopLoss">
+            <option value="">Select range</option>
+            <option value="under-150k">Under $150K</option>
+            <option value="150-200k">$150K &#8211; $200K</option>
+            <option value="200-300k">$200K &#8211; $300K</option>
+            <option value="300-500k">$300K &#8211; $500K</option>
+            <option value="500k+">$500K+</option>
+            <option value="unsure">Unsure</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Annual Stop-Loss Premium
+            <span class="hint">Approximate total specific + aggregate premium.</span>
+          </label>
+          <select id="stopLossPremium">
+            <option value="">Select range</option>
+            <option value="under-200k">Under $200K</option>
+            <option value="200-400k">$200K &#8211; $400K</option>
+            <option value="400-700k">$400K &#8211; $700K</option>
+            <option value="700k-1m">$700K &#8211; $1M</option>
+            <option value="1m+">$1M+</option>
+            <option value="unsure">Unsure</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Stop-Loss Premium Change at Last Renewal</label>
+        <div class="radio-group">
+          <label class="radio-option" onclick="selectRadio(this,'slRenewal','flat')">
+            <input type="radio" name="slRenewal" value="flat"><div class="radio-dot"></div>
+            <span class="radio-label">Flat or decreased</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'slRenewal','5-15')">
+            <input type="radio" name="slRenewal" value="5-15"><div class="radio-dot"></div>
+            <span class="radio-label">Increased 5&#8211;15%</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'slRenewal','15-30')">
+            <input type="radio" name="slRenewal" value="15-30"><div class="radio-dot"></div>
+            <span class="radio-label">Increased 15&#8211;30%</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'slRenewal','30plus')">
+            <input type="radio" name="slRenewal" value="30plus"><div class="radio-dot"></div>
+            <span class="radio-label">Increased 30%+ — significant shock</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'slRenewal','unsure')">
+            <input type="radio" name="slRenewal" value="unsure"><div class="radio-dot"></div>
+            <span class="radio-label">Unsure / not applicable</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <button type="button" class="btn btn-ghost" onclick="prevSection(2)">&#8592; Back</button>
+        <span class="step-counter">Step 2 of 4</span>
+        <button type="button" class="btn btn-primary" onclick="nextSection(2)">Next &#8594;</button>
+      </div>
+    </div>
+
+    <!-- SECTION 3: RESERVE STRATEGY & TREASURY READINESS -->
+    <div class="form-section" id="section3">
+      <div class="section-title">03 — Reserve Strategy &amp; Treasury Readiness</div>
+
+      <div class="field">
+        <label>Current Reserve Amount Held for Plan Obligations
+          <span class="hint">How much capital does your company hold in reserve to cover self-funded claims?</span>
+        </label>
+        <select id="reserveAmount">
+          <option value="">Select range</option>
+          <option value="under-500k">Under $500K</option>
+          <option value="500k-1m">$500K &#8211; $1M</option>
+          <option value="1m-2.5m">$1M &#8211; $2.5M</option>
+          <option value="2.5m-5m">$2.5M &#8211; $5M</option>
+          <option value="5m+">$5M+</option>
+          <option value="none">No formal reserve — funded on a pay-as-you-go basis</option>
+          <option value="unsure">Unsure</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Primary Instrument Used for Claims Reserves <span class="req">*</span></label>
+        <div class="radio-group">
+          <label class="radio-option" onclick="selectRadio(this,'reserveInstrument','money-market')">
+            <input type="radio" name="reserveInstrument" value="money-market"><div class="radio-dot"></div>
+            <span class="radio-label">Money market account <small>Typical yield: 4.5&#8211;5.2%</small></span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'reserveInstrument','tbills')">
+            <input type="radio" name="reserveInstrument" value="tbills"><div class="radio-dot"></div>
+            <span class="radio-label">T-bills / Treasury bonds <small>Typical yield: 4&#8211;5.2%</small></span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'reserveInstrument','cd')">
+            <input type="radio" name="reserveInstrument" value="cd"><div class="radio-dot"></div>
+            <span class="radio-label">Certificates of deposit (CDs)</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'reserveInstrument','checking')">
+            <input type="radio" name="reserveInstrument" value="checking"><div class="radio-dot"></div>
+            <span class="radio-label">Standard business checking / savings <small>Minimal yield</small></span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'reserveInstrument','mixed')">
+            <input type="radio" name="reserveInstrument" value="mixed"><div class="radio-dot"></div>
+            <span class="radio-label">Mix of the above</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'reserveInstrument','unsure')">
+            <input type="radio" name="reserveInstrument" value="unsure"><div class="radio-dot"></div>
+            <span class="radio-label">I'd need to check with our CFO / treasury team</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Has your leadership team discussed Bitcoin as a corporate treasury asset?</label>
+        <div class="radio-group">
+          <label class="radio-option" onclick="selectRadio(this,'btcDiscussion','yes-formal')">
+            <input type="radio" name="btcDiscussion" value="yes-formal"><div class="radio-dot"></div>
+            <span class="radio-label">Yes &#8212; formally discussed at the board or executive level</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'btcDiscussion','yes-informal')">
+            <input type="radio" name="btcDiscussion" value="yes-informal"><div class="radio-dot"></div>
+            <span class="radio-label">Informally &#8212; it&#8217;s come up but no formal analysis</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'btcDiscussion','no-open')">
+            <input type="radio" name="btcDiscussion" value="no-open"><div class="radio-dot"></div>
+            <span class="radio-label">Not yet &#8212; but leadership is open to it</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'btcDiscussion','no-skeptical')">
+            <input type="radio" name="btcDiscussion" value="no-skeptical"><div class="radio-dot"></div>
+            <span class="radio-label">Not yet &#8212; and there would be significant skepticism</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Who would need to approve a Bitcoin treasury allocation?</label>
+        <select id="approvalChain">
+          <option value="">Select structure</option>
+          <option value="cfo-alone">CFO decision alone</option>
+          <option value="ceo-cfo">CEO + CFO together</option>
+          <option value="board-required">Board vote required</option>
+          <option value="investment-committee">Investment committee review</option>
+          <option value="owner-operator">Owner-operator (I decide)</option>
+          <option value="unsure">Unsure</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Anticipated Decision Timeline</label>
+        <div class="radio-group">
+          <label class="radio-option" onclick="selectRadio(this,'timeline','asap')">
+            <input type="radio" name="timeline" value="asap"><div class="radio-dot"></div>
+            <span class="radio-label">ASAP &#8212; we have a renewal coming up and need answers now</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'timeline','3-6mo')">
+            <input type="radio" name="timeline" value="3-6mo"><div class="radio-dot"></div>
+            <span class="radio-label">3&#8211;6 months &#8212; we're building the business case</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'timeline','6-12mo')">
+            <input type="radio" name="timeline" value="6-12mo"><div class="radio-dot"></div>
+            <span class="radio-label">6&#8211;12 months &#8212; exploring before next renewal cycle</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'timeline','researching')">
+            <input type="radio" name="timeline" value="researching"><div class="radio-dot"></div>
+            <span class="radio-label">Just researching for now &#8212; no active timeline</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <button type="button" class="btn btn-ghost" onclick="prevSection(3)">&#8592; Back</button>
+        <span class="step-counter">Step 3 of 4</span>
+        <button type="button" class="btn btn-primary" onclick="nextSection(3)">Next &#8594;</button>
+      </div>
+    </div>
+
+    <!-- SECTION 4: PAIN POINTS & GOALS -->
+    <div class="form-section" id="section4">
+      <div class="section-title">04 — Pain Points &amp; Goals</div>
+
+      <div class="field">
+        <label>What is your single biggest frustration with your current self-funded plan? <span class="req">*</span>
+          <span class="hint">Be as specific as you can &#8212; this shapes the analysis we build for you.</span>
+        </label>
+        <div class="radio-group">
+          <label class="radio-option" onclick="selectRadio(this,'painPoint','cost-unpredictability')">
+            <input type="radio" name="painPoint" value="cost-unpredictability"><div class="radio-dot"></div>
+            <span class="radio-label">Unpredictable claim spikes &#8212; budget volatility is the core problem</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'painPoint','stop-loss-cost')">
+            <input type="radio" name="painPoint" value="stop-loss-cost"><div class="radio-dot"></div>
+            <span class="radio-label">Stop-loss premiums keep rising and I can&#8217;t control it</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'painPoint','reserves-not-working')">
+            <input type="radio" name="painPoint" value="reserves-not-working"><div class="radio-dot"></div>
+            <span class="radio-label">Reserves sitting in cash / money market &#8212; not keeping pace with inflation</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'painPoint','no-long-term-strategy')">
+            <input type="radio" name="painPoint" value="no-long-term-strategy"><div class="radio-dot"></div>
+            <span class="radio-label">No long-term treasury strategy &#8212; we&#8217;re reactive every renewal cycle</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'painPoint','specialty-drug')">
+            <input type="radio" name="painPoint" value="specialty-drug"><div class="radio-dot"></div>
+            <span class="radio-label">Specialty drug costs destroying the plan</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>What is the single outcome you most want from this assessment? <span class="req">*</span></label>
+        <textarea id="desiredOutcome" placeholder="E.g., I want to understand if Bitcoin can actually outpace our claims trend and what it would take to make the board conversation productive..." rows="4" required></textarea>
+        <span class="field-error">Required — this helps us focus your report</span>
+      </div>
+
+      <div class="field">
+        <label>What is your biggest concern about a Bitcoin treasury strategy?</label>
+        <div class="radio-group">
+          <label class="radio-option" onclick="selectRadio(this,'biggestConcern','volatility')">
+            <input type="radio" name="biggestConcern" value="volatility"><div class="radio-dot"></div>
+            <span class="radio-label">Bitcoin volatility &#8212; worried about a down year coinciding with a bad claims year</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'biggestConcern','board-approval')">
+            <input type="radio" name="biggestConcern" value="board-approval"><div class="radio-dot"></div>
+            <span class="radio-label">Getting board or leadership approval &#8212; it&#8217;s a credibility hurdle</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'biggestConcern','tax-legal')">
+            <input type="radio" name="biggestConcern" value="tax-legal"><div class="radio-dot"></div>
+            <span class="radio-label">Tax and legal complexity &#8212; don&#8217;t know how to structure it</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'biggestConcern','custody')">
+            <input type="radio" name="biggestConcern" value="custody"><div class="radio-dot"></div>
+            <span class="radio-label">Custody and security &#8212; don&#8217;t know who holds it or how it&#8217;s protected</span>
+          </label>
+          <label class="radio-option" onclick="selectRadio(this,'biggestConcern','not-enough-info')">
+            <input type="radio" name="biggestConcern" value="not-enough-info"><div class="radio-dot"></div>
+            <span class="radio-label">Just don&#8217;t know enough yet &#8212; that&#8217;s why I&#8217;m here</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Anything else you want us to know or address in your assessment?</label>
+        <textarea id="additionalContext" placeholder="Any additional context about your plan, recent claims activity, upcoming renewal pressures, or specific questions you want answered..." rows="3"></textarea>
+      </div>
+
+      <div style="margin-top:32px">
+        <button type="submit" class="btn btn-submit">&#9889; Get My Treasury Assessment &#8594;</button>
+        <p style="font-size:12px;color:var(--gray-metal);text-align:center;margin-top:12px">We build your custom model and send it within 24 hours. Not financial advice — illustrative analysis for strategic planning.</p>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- SUCCESS STATE -->
+  <div class="success-wrap" id="successWrap">
+    <div class="success-icon">&#9889;</div>
+    <div class="success-title">YOU&#8217;RE IN.</div>
+    <p class="success-body">We&#8217;re building your custom Health Plan Treasury Assessment now. <strong>Expect it in your inbox within 24 hours.</strong><br><br>If the math works for your plan, we&#8217;ll show you exactly how. If it doesn&#8217;t, we&#8217;ll tell you that too.</p>
+    <a href="https://calendly.com/securestrategies-proton/30min" target="_blank" class="btn btn-primary" style="display:inline-flex">Book a Strategy Call While You Wait &#8594;</a>
+  </div>
+
+</div><!-- /page -->
+
+<script>
+let currentSection = 1;
+const totalSections = 4;
+
+function updateProgress(step) {
+  document.getElementById('stepLabel').textContent = step;
+  for (let i = 1; i <= totalSections; i++) {
+    const el = document.getElementById('ps' + i);
+    if (i < step) el.className = 'progress-step done';
+    else if (i === step) el.className = 'progress-step active';
+    else el.className = 'progress-step';
+  }
+}
+
+function selectRadio(label, name, value) {
+  document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+    r.closest('.radio-option').classList.remove('selected');
+  });
+  label.classList.add('selected');
+  label.querySelector('input[type=radio]').checked = true;
+}
+
+function validateSection(n) {
+  let valid = true;
+  const section = document.getElementById('section' + n);
+  section.querySelectorAll('[required]').forEach(el => {
+    const field = el.closest('.field');
+    if (!el.value.trim()) {
+      if (field) field.classList.add('invalid');
+      valid = false;
+    } else {
+      if (field) field.classList.remove('invalid');
+    }
+  });
+  return valid;
+}
+
+function nextSection(current) {
+  if (!validateSection(current)) {
+    document.querySelector('#section' + current + ' [required]:invalid, #section' + current + ' .field.invalid')?.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+  document.getElementById('section' + current).classList.remove('active');
+  const next = current + 1;
+  document.getElementById('section' + next).classList.add('active');
+  currentSection = next;
+  updateProgress(next);
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function prevSection(current) {
+  document.getElementById('section' + current).classList.remove('active');
+  const prev = current - 1;
+  document.getElementById('section' + prev).classList.add('active');
+  currentSection = prev;
+  updateProgress(prev);
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+document.getElementById('assessmentForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  if (!validateSection(4)) return;
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const formData = {
+    // Contact
+    name: document.getElementById('leadName').value,
+    title: document.getElementById('leadTitle').value,
+    email: document.getElementById('leadEmail').value,
+    phone: document.getElementById('leadPhone').value,
+    company: document.getElementById('leadCompany').value,
+    industry: document.getElementById('leadIndustry').value,
+    // Plan profile
+    plan_size: document.getElementById('planSize').value,
+    plan_type: document.getElementById('planType').value,
+    plan_renewal: document.getElementById('planRenewal').value,
+    plan_broker: document.getElementById('planBroker').value,
+    // Claims & cost
+    annual_claims: document.getElementById('annualClaims').value,
+    cost_trend: document.querySelector('input[name="costTrend"]:checked')?.value || '',
+    stop_loss: document.getElementById('stopLoss').value,
+    stop_loss_premium: document.getElementById('stopLossPremium').value,
+    sl_renewal_change: document.querySelector('input[name="slRenewal"]:checked')?.value || '',
+    // Reserve & readiness
+    reserve_amount: document.getElementById('reserveAmount').value,
+    reserve_instrument: document.querySelector('input[name="reserveInstrument"]:checked')?.value || '',
+    btc_discussion: document.querySelector('input[name="btcDiscussion"]:checked')?.value || '',
+    approval_chain: document.getElementById('approvalChain').value,
+    timeline: document.querySelector('input[name="timeline"]:checked')?.value || '',
+    // Pain & goals
+    pain_point: document.querySelector('input[name="painPoint"]:checked')?.value || '',
+    desired_outcome: document.getElementById('desiredOutcome').value,
+    biggest_concern: document.querySelector('input[name="biggestConcern"]:checked')?.value || '',
+    additional_context: document.getElementById('additionalContext').value,
+    // UTM
+    source: urlParams.get('utm_source') || 'website',
+    utm_medium: urlParams.get('utm_medium') || '',
+    utm_campaign: urlParams.get('utm_campaign') || ''
+  };
+
+  const submitBtn = document.querySelector('.btn-submit');
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+
+  try {
+    const response = await fetch('http://raspberrypi.local:3001/api/lead', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(formData)
+    });
+    if (response.ok) {
+      document.getElementById('assessmentForm').style.display = 'none';
+      document.getElementById('successWrap').style.display = 'block';
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    } else { throw new Error(); }
+  } catch(err) {
+    submitBtn.textContent = '&#9889; Get My Treasury Assessment &#8594;';
+    submitBtn.disabled = false;
+    alert('Something went wrong. Email us directly at SecureStrategies@proton.me and we\'ll get your assessment started.');
+  }
+});
+</script>
+</body>
+</html>

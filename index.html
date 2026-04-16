@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lightning Strategies &#8212; Chief Bitcoin Officer as a Service | Beat Healthcare Inflation</title>
-<meta name="description" content="Your Fractional Chief Bitcoin Officer. We build and manage corporate Bitcoin treasuries with BLOC credit facilities to help self-funded employers outpace 6.5&#8211;9.5% annual healthcare inflation.">
+<meta name="description" content="Your Fractional Chief Bitcoin Officer. We advise and consult on sovereign, self-custodied Bitcoin treasuries and BLOC credit facilities &#8212; so self-funded employers can outpace 6.5&#8211;9.5% annual healthcare inflation. You own the keys.">
 <meta property="og:title" content="Lightning Strategies &#8212; Beat Healthcare Inflation with a Bitcoin-Powered Treasury">
 <meta property="og:description" content="Fractional CBO for self-funded employers. Bitcoin treasury + BLOC credit facility to outpace rising claims costs.">
 <meta property="og:type" content="website">
@@ -200,7 +200,17 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
 #services{background:var(--black)}
 .svc-grid{display:grid;grid-template-columns:1fr;gap:20px}
 @media(min-width:760px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1100px){.svc-grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1100px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+.svc-card.featured{grid-column:1/-1}
+@media(min-width:760px){.svc-card.featured{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}}
+@media(min-width:760px){.svc-card.featured .svc-link{grid-column:1/-1}}
+/* Newsletter waitlist */
+.news-form{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.news-form input{flex:1;min-width:160px;padding:11px 14px;background:var(--surface-3);border:1px solid var(--border-hi);border-radius:var(--radius);color:var(--white);font-family:var(--font-body);font-size:14px}
+.news-form input:focus{outline:none;border-color:var(--gold)}
+.news-form button{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;padding:11px 20px;background:var(--gold);color:#000;border:none;border-radius:var(--radius);cursor:pointer;white-space:nowrap;opacity:0.7}
+.news-form button:hover{opacity:1}
+.news-success{font-family:var(--font-cond);font-weight:600;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:none;margin-top:12px}
 .svc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;position:relative;transition:border-color 0.2s,background 0.2s;text-decoration:none;color:inherit}
 .svc-card:hover{border-color:var(--gold);background:var(--surface-2)}
 .svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--border);transition:background 0.2s}
@@ -225,6 +235,19 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
 .adv-desc{font-size:13px;color:var(--gray-light);line-height:1.55;margin-bottom:14px;flex-grow:1}
 .adv-status{font-family:var(--font-cond);font-weight:600;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray-metal);padding:4px 10px;border:1px solid var(--border-hi);border-radius:2px}
 .adv-footer{margin-top:40px;text-align:center}
+.adv-card{position:relative}
+.adv-card.founder{grid-column:1/-1;flex-direction:row;align-items:flex-start;gap:32px;background:linear-gradient(135deg,rgba(247,147,26,0.06),rgba(255,98,0,0.04));border-color:rgba(247,147,26,0.45)}
+.adv-card.founder::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--gold));border-radius:6px 6px 0 0}
+.adv-card.founder .adv-avatar{width:72px;height:72px;flex-shrink:0;font-size:24px}
+.adv-card.founder .adv-name{font-size:19px}
+.adv-card.founder .adv-body{flex:1}
+.adv-hats{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.adv-hat{font-family:var(--font-cond);font-weight:700;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;padding:4px 10px;border-radius:2px}
+.adv-hat.hat-health{background:rgba(255,98,0,0.15);color:var(--orange);border:1px solid rgba(255,98,0,0.3)}
+.adv-hat.hat-btc{background:rgba(247,147,26,0.15);color:var(--gold);border:1px solid rgba(247,147,26,0.3)}
+.adv-credentials{font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:0.18em;color:var(--gray-metal);margin-top:3px;margin-bottom:8px}
+.adv-firm{font-family:var(--font-cond);font-weight:600;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-metal);margin-bottom:10px}
+@media(max-width:700px){.adv-card.founder{flex-direction:column;gap:16px}}
 #resources{background:var(--black)}
 .res-grid{display:grid;grid-template-columns:1fr;gap:20px}
 @media(min-width:760px){.res-grid{grid-template-columns:repeat(3,1fr)}}
@@ -271,9 +294,8 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
       <li class="nav-item"><a href="#services">Services <span class="nav-caret">&#9662;</span></a>
         <ul class="dropdown">
           <li><a href="/estimate.html">Free Treasury Assessment<small>Custom model in 24 hours</small></a></li>
-          <li><a href="/services/treasury-setup.html">Treasury Setup &amp; BLOC Build<small>One-time engagement</small></a></li>
-          <li><a href="/services/fractional-cbo.html">Fractional CBO Retainer<small>Ongoing monthly advisory</small></a></li>
-          <li><a href="/blueprint.html">The Bitcoin Blueprint<small>Free DIY onboarding guide</small></a></li>
+          <li><a href="/services/treasury-setup.html">Treasury Setup &amp; BLOC Advisory<small>One-time strategic engagement</small></a></li>
+          <li><a href="/services/fractional-cbo.html">Fractional CBO Advisory<small>Ongoing monthly advisory</small></a></li>
         </ul>
       </li>
       <li class="nav-item"><a href="#about">About <span class="nav-caret">&#9662;</span></a>
@@ -285,10 +307,10 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
       </li>
       <li class="nav-item"><a href="#resources">Resources <span class="nav-caret">&#9662;</span></a>
         <ul class="dropdown">
-          <li><a href="/blueprint.html">The Bitcoin Blueprint</a></li>
           <li><a href="/philosophy.html">Manifesto</a></li>
           <li><a href="#roi">The Math</a></li>
           <li><a href="/blog.html">Insights <small>Coming soon</small></a></li>
+          <li><a href="#resources">Satoshi Saturdays <small>Newsletter — join waitlist</small></a></li>
         </ul>
       </li>
       <li><a href="#roi">The Math</a></li>
@@ -306,7 +328,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
       <div class="hero-content">
         <div class="label reveal" style="margin-bottom:20px;">Chief Bitcoin Officer as a Service</div>
         <h1 class="hero-headline reveal reveal-d1">BEAT HEALTHCARE<br><span class="line-gold">INFLATION FOREVER</span></h1>
-        <p class="hero-sub reveal reveal-d2"><strong>Your fractional Chief Bitcoin Officer.</strong> We build, implement, and manage a corporate Bitcoin treasury + BLOC credit facility so self-funded employers can pre-fund claims and let Bitcoin growth outpace 6.5&#8211;9.5%+ annual healthcare inflation.</p>
+        <p class="hero-sub reveal reveal-d2"><strong>Your fractional Chief Bitcoin Officer.</strong> We advise and consult &#8212; you own the treasury, hold the keys, and are the only ones with access. We guide you through building a sovereign, self-custodied Bitcoin treasury and Strike BLOC credit facility so your reserves structurally outpace 6.5&#8211;9.5%+ annual healthcare inflation. Sovereign by design.</p>
         <div class="hero-cta reveal reveal-d3">
           <a href="/estimate.html" class="btn btn-primary">Free Treasury Assessment &#8594;</a>
           <a href="#services" class="btn btn-ghost">Our Services</a>
@@ -314,7 +336,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
         <div class="hero-stat-row reveal reveal-d3">
           <div class="hero-stat"><div class="hero-stat-num">6.5&#8211;9.5%</div><div class="hero-stat-label">Annual Claims Inflation</div></div>
           <div class="hero-stat"><div class="hero-stat-num">BLOC</div><div class="hero-stat-label">Bitcoin Credit Facility</div></div>
-          <div class="hero-stat"><div class="hero-stat-num">$1M+</div><div class="hero-stat-label">Treasury Target</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">Self-Custody</div><div class="hero-stat-label">You Hold the Keys</div></div>
         </div>
       </div>
       <div class="hero-logo-wrap reveal reveal-d2">
@@ -360,8 +382,8 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
 <div class="trust-bar">
   <div class="trust-bar-inner container">
     <div class="trust-item"><span class="trust-dot">&#9679;</span> Decade in Employee Benefits at #1, #3, #6 Global Brokerages</div>
-    <div class="trust-item"><span class="trust-dot">&#9679;</span> Bitcoin Since 2017</div>
-    <div class="trust-item"><span class="trust-dot">&#9679;</span> BLOC Registered</div>
+    <div class="trust-item"><span class="trust-dot">&#9679;</span> Bitcoin Practitioner Since 2017</div>
+    <div class="trust-item"><span class="trust-dot">&#9679;</span> Strategic Advisory &#8212; You Own &amp; Control the Treasury</div>
   </div>
 </div>
 
@@ -388,7 +410,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
         <div class="transform-item"><span class="icon">&#10003;</span><span>BLOC credit facility draws fiat against BTC &#8212; fund claims without selling your position</span></div>
         <div class="transform-item"><span class="icon">&#10003;</span><span>Renewal cycles become strategic &#8212; treasury appreciation funds higher attachment points and better terms</span></div>
         <div class="transform-item"><span class="icon">&#10003;</span><span>Board-approved treasury policy in place &#8212; risk framework, custody, reporting, full governance</span></div>
-        <div class="transform-item"><span class="icon">&#10003;</span><span>Fractional CBO manages everything &#8212; monthly performance reports vs. claims trend, tax optimization, rebalancing</span></div>
+        <div class="transform-item"><span class="icon">&#10003;</span><span>Fractional CBO advises on everything &#8212; monthly performance reports vs. claims trend, tax positioning, rebalancing strategy. You stay in control.</span></div>
       </div>
     </div>
   </div>
@@ -398,41 +420,39 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
   <div class="container">
     <div class="section-header">
       <div class="label reveal">Our Services</div>
-      <h2 class="section-title reveal reveal-d1">FOUR WAYS<br><span class="gold">TO ENGAGE US</span></h2>
-      <p class="section-desc reveal reveal-d2">From a free custom assessment to a full fractional CBO engagement, every service is built around one outcome: making your reserves grow faster than your claims trend.</p>
+      <h2 class="section-title reveal reveal-d1">THREE WAYS<br><span class="gold">TO ENGAGE US</span></h2>
+      <p class="section-desc reveal reveal-d2">From a free custom assessment to a full fractional CBO advisory engagement, every service is built around one outcome: making your reserves grow faster than your claims trend.</p>
     </div>
     <div class="svc-grid reveal reveal-d2">
+      <!-- Row 1: Free assessment — full width featured -->
       <a href="/estimate.html" class="svc-card featured">
-        <div class="svc-tag">&#9889; Start Here &#183; Free</div>
-        <div class="svc-title">Health Plan Treasury Assessment</div>
-        <div class="svc-price">FREE</div>
-        <div class="svc-price-note">24-Hour Turnaround</div>
-        <p class="svc-desc">Answer six questions about your self-funded plan. We build a custom model showing what a Bitcoin-powered treasury would have done against your actual claims trend &#8212; and deliver it within 24 hours. No obligation.</p>
-        <span class="svc-link">Get Your Assessment &#8594;</span>
+        <div>
+          <div class="svc-tag">&#9889; Start Here &#183; Free</div>
+          <div class="svc-title">Health Plan Treasury Assessment</div>
+          <div class="svc-price">FREE</div>
+          <div class="svc-price-note">24-Hour Turnaround</div>
+        </div>
+        <div>
+          <p class="svc-desc">Tell us about your self-funded plan. We build a custom advisory model showing what a sovereign Bitcoin treasury &#8212; sized to your actual annual claims spend &#8212; would look like for your organization. Delivered within 24 hours. No obligation, no pitch. You own and control everything.</p>
+          <span class="svc-link">Get Your Assessment &#8594;</span>
+        </div>
       </a>
+      <!-- Row 2: Paid advisory engagements -->
       <a href="/services/treasury-setup.html" class="svc-card">
         <div class="svc-tag">One-Time Engagement</div>
-        <div class="svc-title">Treasury Setup &amp; BLOC Build</div>
+        <div class="svc-title">Treasury Setup &amp; BLOC Advisory</div>
         <div class="svc-price">$25K&#8211;$50K</div>
-        <div class="svc-price-note">One-Time Setup</div>
-        <p class="svc-desc">We stand up your corporate Bitcoin treasury from zero &#8212; policy, multi-sig custody, BLOC credit facility, custom modeling, board education, tax framework, and initial acquisition execution. You launch with governance in place.</p>
-        <span class="svc-link">See What's Included &#8594;</span>
+        <div class="svc-price-note">Strategic Advisory</div>
+        <p class="svc-desc">We advise and guide your team through designing a sovereign, self-custodied Bitcoin treasury strategy &#8212; policy framework, custody recommendations, BLOC credit facility structuring, custom financial modeling, and board education. You own the keys from day one. We work alongside your incumbent broker and banking relationships.</p>
+        <span class="svc-link">See What&#8217;s Included &#8594;</span>
       </a>
       <a href="/services/fractional-cbo.html" class="svc-card">
         <div class="svc-tag">Monthly Retainer</div>
-        <div class="svc-title">Fractional CBO Retainer</div>
+        <div class="svc-title">Fractional CBO Advisory</div>
         <div class="svc-price">$8,000/mo</div>
         <div class="svc-price-note">Ongoing Advisory</div>
-        <p class="svc-desc">Your embedded Chief Bitcoin Officer. Monthly performance reports vs. claims trend, BLOC draws, rebalancing, tax optimization, quarterly board briefings, and renewal-cycle strategy. 24-hour priority response.</p>
-        <span class="svc-link">Explore the Retainer &#8594;</span>
-      </a>
-      <a href="/blueprint.html" class="svc-card">
-        <div class="svc-tag">Free Resource</div>
-        <div class="svc-title">The Bitcoin Blueprint</div>
-        <div class="svc-price">FREE</div>
-        <div class="svc-price-note">Self-Guided Tutorial</div>
-        <p class="svc-desc">A three-step DIY Bitcoin onboarding guide &#8212; ProtonMail, Strike, cold wallet. For founders and finance leaders who want to hold Bitcoin personally before building a corporate treasury. No email required.</p>
-        <span class="svc-link">Read the Blueprint &#8594;</span>
+        <p class="svc-desc">Your fractional Chief Bitcoin Officer &#8212; providing ongoing strategic advice on treasury performance vs. claims trend, Strike BLOC credit facility strategy, tax positioning, and quarterly board briefings. You control and operate your treasury. We advise, consult, and keep the strategy ahead of your claims curve. 24-hour priority access.</p>
+        <span class="svc-link">Explore the Advisory &#8594;</span>
       </a>
     </div>
   </div>
@@ -480,19 +500,19 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
     </div>
     <div class="story-grid">
       <div>
-        <p class="story-quote reveal">I spent a decade in the trenches of employee benefits and insurance brokerage &#8212; at three of the world's top global firms. <em>I'm not here to sell you on Bitcoin. I'm here to solve your healthcare inflation problem.</em></p>
+        <p class="story-quote reveal">I&#8217;ve scaled a SoftBank-backed company from 6 to 376 hotels in six months. Sold enterprise SaaS at a pre-IPO and a publicly traded firm. Built books of business at three of the world&#8217;s largest insurance brokerages. <em>And I held Bitcoin through every chapter since 2017.</em></p>
         <div class="story-credential reveal reveal-d1" style="margin-top:32px">
-          <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1L10 6H15L11 9L12.5 14L8 11L3.5 14L5 9L1 6H6L8 1Z" fill="#F7931A"/></svg></div><span class="credential-text">VP of Employee Health &amp; Benefits &#8212; #1 global insurance brokerage</span></div>
-          <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="10" rx="1" stroke="#F7931A" stroke-width="1.5"/><path d="M5 4V2.5C5 1.7 5.7 1 6.5 1h3C10.3 1 11 1.7 11 2.5V4" stroke="#F7931A" stroke-width="1.5"/></svg></div><span class="credential-text">Consulted at #1, #3, and #6 ranked global insurance brokerages</span></div>
-          <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13L8 3L13 13" stroke="#F7931A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 9H11" stroke="#F7931A" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="credential-text">Bitcoin holder &amp; practitioner since 2017 &#8212; not a tourist</span></div>
+          <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="10" rx="1" stroke="#F7931A" stroke-width="1.5"/><path d="M5 4V2.5C5 1.7 5.7 1 6.5 1h3C10.3 1 11 1.7 11 2.5V4" stroke="#F7931A" stroke-width="1.5"/></svg></div><span class="credential-text">VP, Employee Health &amp; Benefits &#8212; #1, #3, and #6 global, publicly traded insurance brokerages. Dual licensed.</span></div>
+          <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M2 8 L6 4 L10 8" stroke="#F7931A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 4 L6 13" stroke="#F7931A" stroke-width="1.5" stroke-linecap="round"/><rect x="9" y="7" width="5" height="6" rx="1" stroke="#F7931A" stroke-width="1.5"/></svg></div><span class="credential-text">SoftBank-backed operator &#8212; scaled hotel &amp; hospitality portfolio from 6 to 376 properties in 6 months</span></div>
+          <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13L8 3L13 13" stroke="#F7931A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 9H11" stroke="#F7931A" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="credential-text">Bitcoin holder &amp; practitioner since 2017 &#8212; held through SoftBank, SaaS, and back to benefits</span></div>
         </div>
       </div>
       <div class="story-body reveal reveal-d2">
-        <p>Before Lightning Strategies, I spent a decade in the trenches of employee benefits consulting &#8212; working at three of the world's top global insurance brokerages (ranked #1, #3, and #6 globally). I've seen the self-funded healthcare problem from every angle: as a benefits strategist, as a broker, and as someone who's sat across the table from CFOs watching their claims trend devour their budgets year after year.</p>
-        <p>The pattern is always the same: claims costs rise 6.5&#8211;9.5% annually. The CFO holds reserves in money markets yielding 4&#8211;5%. The gap compounds. Every renewal cycle is a scramble. Nobody has a long-term answer.</p>
-        <p>In 2017, I started accumulating Bitcoin. Not as a speculative bet &#8212; as a thesis. I watched Bitcoin deliver 20&#8211;45%+ annualized returns over every multi-year period while the insurance industry kept recommending the same losing reserve strategies. The math was obvious. The opportunity was massive. Nobody was connecting the dots.</p>
-        <p><strong>Lightning Strategies is the firm I wish existed when I was advising self-funded employers.</strong> Not another Bitcoin evangelist. Not another insurance consultant. The only practitioner who has lived in both worlds and can build the bridge between them.</p>
-        <p>I combine a decade of benefits expertise with deep Bitcoin conviction to become your fractional Chief Bitcoin Officer &#8212; the person who builds the treasury, manages the BLOC facility, and proves the math against your claims data every single month.</p>
+        <p>I started in employee benefits at the #6 global brokerage &#8212; an intern who won the national sales challenge, earned a full-time producer role, and built a book of business in Dallas in under three years. Then I got recruited to OYO, the fastest-growing SoftBank portfolio company in the world.</p>
+        <p>At OYO I was a Senior Commercial Manager scaling their U.S. hotel portfolio &#8212; 6 to 376 properties in six months. I helped build the underwriting algorithm with SoftBank's team to assess and deploy CapEx, grew the team from 4 to 43, and closed the Hooters Hotel in Las Vegas. When the global COO relocated us to Palo Alto to lead a vacation homes launch, I went. When COVID hit, I adapted &#8212; moving through Domio, pre-IPO Paycor (one deal from Presidents Club), and Coupa (publicly traded, Thoma Bravo buyout) building emerging market divisions before returning to what I know best.</p>
+        <p>I came back to benefits at the #6 global brokerage &#8212; took over a large retiring executive&#8217;s book, grew it, and earned the Vice President title covering both employee benefits and commercial lines. Dual licensed. Then recruited to where I am now: VP of Employee Health &amp; Benefits at the #1 insurance brokerage firm on the planet, rebuilding a $1.5M book in my home market of Detroit.</p>
+        <p>Through all of it &#8212; SoftBank board rooms, SaaS sales floors, brokerage C-suites &#8212; I held Bitcoin. Accumulated since 2017. Watched it deliver returns no reserve instrument could touch while the benefits industry kept recommending the same losing strategy.</p>
+        <p><strong>Lightning Strategies is the firm I wish existed when I was advising self-funded employers.</strong> Not another Bitcoin evangelist. Not another insurance consultant. The only practitioner who has stood in all of these rooms and can connect every dot &#8212; advising on the treasury strategy that fixes the reserve problem your broker can&#8217;t solve.</p>
       </div>
     </div>
   </div>
@@ -503,51 +523,61 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
     <div class="section-header">
       <div class="label reveal">Advisory Council</div>
       <h2 class="section-title reveal reveal-d1">STRATEGIC GUIDANCE<br><span class="gold">FROM PRACTITIONERS</span></h2>
-      <p class="section-desc reveal reveal-d2">Lightning Strategies is advised by veteran operators across treasury, benefits, custody, and tax &#8212; so every recommendation we make reflects decades of field-tested judgment, not Bitcoin theory.</p>
+      <p class="section-desc reveal reveal-d2">Lightning Strategies is built on decades of field-tested judgment &#8212; institutional banking, tax strategy, corporate law, and Bitcoin treasury expertise working in concert. We are finance experts solving for healthcare inflation. You keep your incumbent broker. We solve the reserve problem they can&#8217;t.</p>
     </div>
     <div class="adv-grid reveal reveal-d2">
-      <div class="adv-card">
-        <div class="adv-avatar">CFO</div>
-        <div class="adv-role">Corporate Treasury</div>
-        <div class="adv-name">Advisor &#8212; Announcing Soon</div>
-        <p class="adv-desc">Former middle-market CFO with 20+ years managing corporate reserves, stop-loss renewals, and board-level risk policy.</p>
-        <span class="adv-status">Seat Reserved</span>
+
+      <!-- Founder — full-width featured card -->
+      <div class="adv-card founder">
+        <div class="adv-avatar">JS</div>
+        <div class="adv-body">
+          <div class="adv-role">Founder &amp; Fractional Chief Bitcoin Officer</div>
+          <div class="adv-name">Jared Selewski</div>
+          <p class="adv-desc">Jared is a veteran employee benefits consultant with over a decade of experience across the world&#8217;s top global insurance brokerages &#8212; including Marsh McLennan and firms ranked #1, #3, and #6 globally. He combines deep expertise in self-funded and level-funded health plans with Bitcoin treasury strategy (practitioner since 2017) to serve as fractional Chief Bitcoin Officer for middle-market employers &#8212; building Bitcoin-powered treasuries and Strike BLOC credit facilities that structurally outpace 6.5&#8211;9.5%+ annual healthcare inflation.</p>
+          <div class="adv-hats">
+            <span class="adv-hat hat-health">&#9889; Healthcare &amp; Benefits</span>
+            <span class="adv-hat hat-btc">&#9735; Bitcoin &amp; Custody</span>
+          </div>
+        </div>
       </div>
+
+      <!-- Advisor 1 -->
       <div class="adv-card">
-        <div class="adv-avatar">ACT</div>
-        <div class="adv-role">Benefits Actuary</div>
-        <div class="adv-name">Advisor &#8212; Announcing Soon</div>
-        <p class="adv-desc">Credentialed actuary with deep experience modeling self-funded claims trend, attachment points, and stop-loss economics.</p>
-        <span class="adv-status">Seat Reserved</span>
+        <div class="adv-avatar">CM</div>
+        <div class="adv-role">Strategic Advisor</div>
+        <div class="adv-name">Chris Meso</div>
+        <div class="adv-firm">T-Rex Advisors &#8212; Business Coach</div>
+        <p class="adv-desc">Seasoned entrepreneur, operator, and business coach at T-Rex Advisors with deep experience building and scaling companies. A key voice for Lightning Strategies&#8217; overall roadmap, capital strategy, and long-term Bitcoin treasury execution.</p>
       </div>
+
+      <!-- Advisor 2 -->
       <div class="adv-card">
-        <div class="adv-avatar">BTC</div>
-        <div class="adv-role">Custody &amp; Security</div>
-        <div class="adv-name">Advisor &#8212; Announcing Soon</div>
-        <p class="adv-desc">Multi-sig custody expert with a decade of Bitcoin-native engineering &#8212; cold storage, key ceremonies, inheritance protocols.</p>
-        <span class="adv-status">Seat Reserved</span>
+        <div class="adv-avatar">LL</div>
+        <div class="adv-role">Strategic Advisor</div>
+        <div class="adv-name">Leon LaBrecque</div>
+        <div class="adv-credentials">JD &middot; CPA &middot; CFP&#174; &middot; CFA</div>
+        <div class="adv-firm">Sequoia Financial Group</div>
+        <p class="adv-desc">Highly credentialed wealth management and tax strategist. Brings deep expertise in complex financial planning, taxation, retirement strategies, and investment structuring &#8212; guiding tax-efficient Bitcoin treasury policies and long-term ROI modeling against healthcare inflation.</p>
       </div>
+
+      <!-- Advisor 3 -->
       <div class="adv-card">
-        <div class="adv-avatar">LAW</div>
-        <div class="adv-role">ERISA &amp; Tax Counsel</div>
-        <div class="adv-name">Advisor &#8212; Announcing Soon</div>
-        <p class="adv-desc">ERISA attorney and digital-asset tax specialist who structures treasury policy, fiduciary framework, and multi-state compliance.</p>
-        <span class="adv-status">Seat Reserved</span>
+        <div class="adv-avatar">RE</div>
+        <div class="adv-role">Strategic Advisor</div>
+        <div class="adv-name">Rick Ellis</div>
+        <div class="adv-firm">Grand Sakwa Capital &#8212; Managing Director</div>
+        <p class="adv-desc">32-year veteran of JPMorgan Chase&#8217;s commercial and middle-market banking teams. His institutional banking, capital-raising, and credit facility expertise is exceptionally valuable for Strike BLOC implementation, treasury operations, and scaling Lightning Strategies&#8217; financial infrastructure.</p>
       </div>
+
+      <!-- Advisor 4 -->
       <div class="adv-card">
-        <div class="adv-avatar">TPA</div>
-        <div class="adv-role">TPA Operations</div>
-        <div class="adv-name">Advisor &#8212; Announcing Soon</div>
-        <p class="adv-desc">Third-party administrator principal who understands the operational mechanics of claims adjudication, funding, and reinsurance.</p>
-        <span class="adv-status">Seat Reserved</span>
+        <div class="adv-avatar">JE</div>
+        <div class="adv-role">Legal Advisor</div>
+        <div class="adv-name">Jeremy Ellis</div>
+        <div class="adv-firm">Taft Law &#8212; Detroit (Southfield)</div>
+        <p class="adv-desc">Corporate transactional attorney with expertise in M&amp;A, private equity, venture capital, and corporate governance. Advises Lightning Strategies on entity structure, capital formation, and corporate legal matters as the firm scales &#8212; keeping us built right from the ground up.</p>
       </div>
-      <div class="adv-card">
-        <div class="adv-avatar">OPS</div>
-        <div class="adv-role">Bitcoin Operator</div>
-        <div class="adv-name">Advisor &#8212; Announcing Soon</div>
-        <p class="adv-desc">Long-tenured Bitcoin practitioner &#8212; node operator, lightning integrator, and capital allocator with treasury-scale experience.</p>
-        <span class="adv-status">Seat Reserved</span>
-      </div>
+
     </div>
     <div class="adv-footer reveal">
       <a href="/advisory-council.html" class="btn btn-ghost">Full Advisory Council &#8594;</a>
@@ -563,39 +593,31 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
       <p class="section-desc reveal reveal-d2">We publish the thinking behind the practice &#8212; tutorials, principles, and working models. Start with these.</p>
     </div>
     <div class="res-grid reveal reveal-d2">
-      <a href="/blueprint.html" class="res-card">
-        <div class="res-kind">Guide</div>
-        <div class="res-title">The Bitcoin Blueprint</div>
-        <p class="res-desc">A free, three-step DIY onboarding tutorial &#8212; ProtonMail, Strike, and cold-storage setup. Built for founders and finance leaders who want personal sovereignty before corporate strategy.</p>
-        <span class="res-link">Read the Guide &#8594;</span>
-      </a>
       <a href="/philosophy.html" class="res-card">
         <div class="res-kind">Manifesto</div>
         <div class="res-title">Fix the Money, Fix the World</div>
-        <p class="res-desc">Our principles on sovereignty, privacy, and transparency &#8212; plus the non-negotiables that shape every engagement (no equity, no subscriptions, no compromise).</p>
+        <p class="res-desc">Our principles on sovereignty, privacy, and transparency &#8212; and the non-negotiables that shape every advisory engagement: no equity, no subscriptions, no compromise. You own everything.</p>
         <span class="res-link">Read the Manifesto &#8594;</span>
       </a>
       <div class="res-card stub">
         <div class="res-kind">Insights</div>
         <div class="res-title">Field Notes &amp; Research</div>
-        <p class="res-desc">Case studies, market analysis, and working papers on Bitcoin-powered treasuries, BLOC mechanics, and the self-funded healthcare inflation curve.</p>
+        <p class="res-desc">Case studies, market analysis, and working papers on Bitcoin-powered treasury strategy, BLOC credit facilities, and the self-funded healthcare inflation curve.</p>
         <span class="res-link">Coming Soon</span>
+      </div>
+      <div class="res-card stub" style="opacity:1">
+        <div class="res-kind" style="color:var(--gold)">Newsletter</div>
+        <div class="res-title">Satoshi Saturdays</div>
+        <p class="res-desc" style="opacity:0.75">Weekly intelligence on Bitcoin treasury strategy, self-funded health plan trends, and the intersection of sovereign money and corporate finance. Coming soon.</p>
+        <form class="news-form" onsubmit="submitNewsletter(event, this)">
+          <input type="email" placeholder="your@email.com" required>
+          <button type="submit">Join Waitlist</button>
+        </form>
+        <div class="news-success">&#9889; You&#8217;re on the list.</div>
       </div>
     </div>
   </div>
 </section>
-
-<div class="press-bar">
-  <div class="container press-bar-inner">
-    <span class="press-label">Partners &amp; Stack</span>
-    <span class="press-logo">Strike BLOC</span>
-    <span class="press-logo">Unchained</span>
-    <span class="press-logo">Trezor</span>
-    <span class="press-logo">Proton</span>
-    <span class="press-logo">Calendly</span>
-    <span class="press-logo">Stripe</span>
-  </div>
-</div>
 
 <section id="cta">
   <div class="container" style="max-width:720px">
@@ -635,15 +657,14 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
             <div class="email-sig-tagline">Chief Bitcoin Officer &#8212; Self-Funded Employers</div>
           </div>
         </div>
-        <p class="footer-tagline">Your fractional Chief Bitcoin Officer. We build and manage corporate Bitcoin treasuries with BLOC credit facilities to help self-funded employers outpace healthcare inflation.</p>
+        <p class="footer-tagline">Your fractional Chief Bitcoin Officer. We advise and consult &#8212; you own the treasury, you hold the keys. We guide self-funded employers through building sovereign Bitcoin reserves that outpace healthcare inflation.</p>
       </div>
       <div>
         <span class="footer-col-title">Services</span>
         <ul class="footer-links">
           <li><a href="/estimate.html">Free Treasury Assessment</a></li>
-          <li><a href="/services/treasury-setup.html">Treasury Setup &amp; BLOC Build</a></li>
-          <li><a href="/services/fractional-cbo.html">Fractional CBO Retainer</a></li>
-          <li><a href="/blueprint.html">The Bitcoin Blueprint</a></li>
+          <li><a href="/services/treasury-setup.html">Treasury Setup &amp; BLOC Advisory</a></li>
+          <li><a href="/services/fractional-cbo.html">Fractional CBO Advisory</a></li>
         </ul>
       </div>
       <div>
@@ -658,10 +679,10 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
       <div>
         <span class="footer-col-title">Resources</span>
         <ul class="footer-links">
-          <li><a href="/blueprint.html">The Bitcoin Blueprint</a></li>
           <li><a href="/philosophy.html">Manifesto</a></li>
           <li><a href="#roi">The Math</a></li>
           <li><a href="/blog.html">Insights &#8212; Coming Soon</a></li>
+          <li><a href="#resources">Satoshi Saturdays &#8212; Join Waitlist</a></li>
         </ul>
       </div>
     </div>
@@ -681,6 +702,18 @@ const navEl=document.querySelector('nav');
 window.addEventListener('scroll',()=>{navEl.style.borderBottomColor=window.scrollY>40?'var(--border-hi)':'var(--border)'});
 const ctaSection=document.getElementById('cta');const floatingBtn=document.getElementById('floatingCta');
 if(ctaSection&&floatingBtn){const ctaObserver=new IntersectionObserver((entries)=>{entries.forEach(e=>{floatingBtn.classList.toggle('hidden',e.isIntersecting)})},{threshold:0.3});ctaObserver.observe(ctaSection)}
+async function submitNewsletter(e, form) {
+  e.preventDefault();
+  const email = form.querySelector('input[type=email]').value;
+  try {
+    await fetch('http://raspberrypi.local:3001/api/newsletter', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({email, source:'satoshi-saturdays-waitlist'})
+    });
+  } catch(_) {}
+  form.style.display = 'none';
+  form.closest('.res-card').querySelector('.news-success').style.display = 'block';
+}
 </script>
 </body>
 </html>
