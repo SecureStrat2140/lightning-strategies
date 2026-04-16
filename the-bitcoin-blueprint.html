@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The ₿ Blueprint — Lightning Strategies</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --orange:     #FF6200;
+  --orange-hi:  #FF8040;
+  --orange-dim: #C44D00;
+  --black:      #080808;
+  --surface:    #111111;
+  --surface-2:  #161616;
+  --surface-3:  #1C1C1C;
+  --border:     #202020;
+  --border-hi:  #2C2C2C;
+  --gray-mid:   #505050;
+  --gray-metal: #747474;
+  --gray-light: #ABABAB;
+  --white:      #FFFFFF;
+  --off-white:  #EEEEEE;
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-cond:    'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+  background: var(--black);
+  color: var(--off-white);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Subtle background glow */
+body::before {
+  content: '';
+  position: fixed;
+  top: -10%; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 600px;
+  background: radial-gradient(ellipse at center,
+    rgba(255,98,0,0.06) 0%,
+    rgba(255,98,0,0.02) 45%,
+    transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── PAGE CARD ── */
+.page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 680px;
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Orange top bar */
+.page::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange-dim), var(--orange), var(--orange-hi), var(--orange));
+}
+
+/* ── HEADER ── */
+.header {
+  padding: 44px 52px 36px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.brand-wordmark {
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  color: var(--gray-metal);
+}
+.brand-wordmark span { color: var(--orange); }
+
+.label {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.label::before {
+  content: '';
+  display: block;
+  width: 20px; height: 1.5px;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 10vw, 72px);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 0.92;
+  margin-bottom: 18px;
+}
+.title .orange { color: var(--orange); }
+
+.subtitle {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gray-metal);
+  margin-bottom: 20px;
+}
+
+.intro {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--gray-light);
+  max-width: 520px;
+}
+
+/* ── STEPS ── */
+.steps {
+  padding: 0 52px 40px;
+}
+
+.step {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 0 20px;
+  align-items: start;
+}
+.step:last-child { border-bottom: none; }
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  letter-spacing: 0.06em;
+  color: var(--border-hi);
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.step-content {}
+
+.step-title {
+  font-family: var(--font-cond);
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.step-sub {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.step-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  color: var(--off-white);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.step-link::before {
+  content: '→';
+  color: var(--orange);
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.step-link:hover { color: var(--orange); }
+
+.step-link-label {
+  font-size: 11px;
+  color: var(--gray-mid);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  margin-left: 4px;
+}
+
+/* wallet list (step 3) */
+.wallet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.wallet-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.wallet-list li::before {
+  content: '→';
+  color: var(--orange);
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.wallet-list a {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  color: var(--off-white);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.wallet-list a:hover { color: var(--orange); }
+
+/* ── FREE BLOCK ── */
+.free-block {
+  margin: 0 52px 40px;
+  background: var(--surface-3);
+  border: 1px solid var(--border-hi);
+  border-left: 3px solid var(--orange);
+  border-radius: 3px;
+  padding: 22px 28px;
+}
+.free-block p {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  line-height: 1.5;
+}
+.free-block p + p {
+  margin-top: 6px;
+  font-weight: 400;
+  color: var(--gray-light);
+  font-size: 14px;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--surface-3);
+  border-top: 1px solid var(--border);
+  padding: 24px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  color: var(--gray-metal);
+}
+.footer-brand span { color: var(--orange); }
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: right;
+}
+.footer-links a {
+  font-family: var(--font-cond);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: var(--gray-metal);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-links a:hover { color: var(--orange); }
+.footer-tagline {
+  font-family: var(--font-cond);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  margin-top: 2px;
+}
+
+/* ── PRINT / PDF ── */
+@media print {
+  body {
+    background: #080808;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    border: none;
+    border-radius: 0;
+    max-width: 100%;
+  }
+  body::before { display: none; }
+}
+
+@media (max-width: 600px) {
+  .header, .steps, .free-block, .footer { padding-left: 28px; padding-right: 28px; }
+  .free-block { margin-left: 28px; margin-right: 28px; }
+  .step { grid-template-columns: 36px 1fr; }
+  .step-num { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand-row">
+      <!-- Mini shield logo -->
+      <svg width="22" height="27" viewBox="0 0 192 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lk" x1="70" y1="20" x2="122" y2="68" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#FF8040"/>
+            <stop offset="100%" stop-color="#C44D00"/>
+          </linearGradient>
+          <linearGradient id="sb" x1="96" y1="62" x2="96" y2="222" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#1E1E1E"/>
+            <stop offset="100%" stop-color="#080808"/>
+          </linearGradient>
+          <linearGradient id="bolt" x1="84" y1="82" x2="110" y2="185" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#FFAA55"/>
+          </linearGradient>
+          <filter id="bg">
+            <feGaussianBlur stdDeviation="5" result="b"/>
+            <feColorMatrix in="b" type="matrix" values="1 0.4 0 0 0 0.4 0.2 0 0 0 0 0 0 0 0 0 0 0 0.7 0" result="c"/>
+            <feMerge><feMergeNode in="c"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <clipPath id="cp">
+            <path d="M96 62 L164 86 L164 152 Q164 200 96 220 Q28 200 28 152 L28 86 Z"/>
+          </clipPath>
+        </defs>
+        <path d="M70 66 L70 42 Q70 18 96 18 Q122 18 122 42 L122 66" stroke="url(#lk)" stroke-width="13" stroke-linecap="round" fill="none"/>
+        <rect x="83" y="57" width="26" height="15" fill="#080808"/>
+        <path d="M96 62 L164 86 L164 152 Q164 200 96 220 Q28 200 28 152 L28 86 Z" fill="url(#sb)"/>
+        <path d="M96 62 L164 86 L164 152 Q164 200 96 220 Q28 200 28 152 L28 86 Z" fill="none" stroke="#FF6200" stroke-width="1.8"/>
+        <g clip-path="url(#cp)">
+          <rect x="28" y="118" width="136" height="2.5" fill="#FF6200"/>
+          <rect x="35" y="126" width="122" height="2.5" fill="white" opacity="0.07"/>
+          <rect x="35" y="138" width="112" height="2.5" fill="white" opacity="0.055"/>
+          <rect x="35" y="150" width="96"  height="2.5" fill="white" opacity="0.045"/>
+          <rect x="35" y="162" width="78"  height="2.5" fill="white" opacity="0.04"/>
+        </g>
+        <g filter="url(#bg)">
+          <path d="M103 82 L77 142 L93 142 L86 186 L119 124 L102 124 L113 82 Z" fill="url(#bolt)"/>
+        </g>
+      </svg>
+      <div class="brand-wordmark">LIGHTNING <span>STRATEGIES</span></div>
+    </div>
+
+    <div class="label">DIY · Onboarding · Sovereignty</div>
+
+    <h1 class="title">The <span class="orange">₿</span><br>Blueprint</h1>
+
+    <div class="subtitle">Bitcoin · AI · Independence</div>
+
+    <p class="intro">A simple 3-step process to get you Bitcoin-native in under 30 minutes. No subscriptions, no middlemen, no compromise — just the exact steps I personally use and recommend to every client.</p>
+  </div>
+
+  <!-- STEPS -->
+  <div class="steps">
+
+    <!-- Step 1 -->
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <div class="step-title">Create a free ProtonMail address</div>
+        <span class="step-sub">Privacy-first communication</span>
+        <div class="step-links">
+          <a href="https://proton.me/mail" class="step-link" target="_blank">
+            proton.me/mail
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <div class="step-title">Open a Strike account</div>
+        <span class="step-sub">Instant USD ↔ ₿ rails</span>
+        <div class="step-links">
+          <a href="https://strike.me" class="step-link" target="_blank">
+            strike.me <span class="step-link-label">— personal</span>
+          </a>
+          <a href="https://strike.me/business" class="step-link" target="_blank">
+            strike.me/business <span class="step-link-label">— business</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <div class="step-title">Order your cold storage wallet</div>
+        <span class="step-sub">True self-custody</span>
+        <ul class="wallet-list">
+          <li><a href="https://trezor.io/" target="_blank">Trezor — trezor.io</a></li>
+          <li><a href="https://coldcard.com/" target="_blank">Cold Card — coldcard.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div><!-- /steps -->
+
+  <!-- FREE BLOCK -->
+  <div class="free-block">
+    <p>This product is free.</p>
+    <p>₿ donations are welcomed and appreciated.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>
+      <div class="footer-brand">LIGHTNING <span>STRATEGIES</span></div>
+      <div class="footer-tagline">AI Chief of Staff + Chief Bitcoin Officer in a Box</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://lightningstrategies.me" target="_blank">lightningstrategies.me</a>
+      <a href="mailto:SecureStrategies@proton.me">SecureStrategies@proton.me</a>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+</body>
+</html>

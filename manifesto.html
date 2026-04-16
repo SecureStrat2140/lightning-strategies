@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Manifesto — Lightning Strategies</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --orange:     #FF6200;
+  --orange-hi:  #FF8040;
+  --orange-dim: #C44D00;
+  --black:      #080808;
+  --surface:    #111111;
+  --surface-2:  #161616;
+  --surface-3:  #1C1C1C;
+  --border:     #202020;
+  --border-hi:  #2C2C2C;
+  --gray-mid:   #505050;
+  --gray-metal: #747474;
+  --gray-light: #ABABAB;
+  --white:      #FFFFFF;
+  --off-white:  #EEEEEE;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-cond:    'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--off-white);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: -10%; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 600px;
+  background: radial-gradient(ellipse at center, rgba(255,98,0,0.055) 0%, rgba(255,98,0,0.02) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+a { color: inherit; text-decoration: none; }
+
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(8,8,8,0.93);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(20px, 5vw, 52px);
+  justify-content: space-between;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gray-metal);
+  transition: color 0.15s;
+}
+.back-link:hover { color: var(--orange); }
+.back-link::before { content: '←'; color: var(--orange); font-size: 14px; }
+.topbar-brand {
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  color: var(--gray-metal);
+}
+.topbar-brand span { color: var(--orange); }
+
+.page-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 100px clamp(20px, 5vw, 48px) 80px;
+}
+
+.manifesto-header {
+  margin-bottom: 60px;
+  padding-bottom: 52px;
+  border-bottom: 1px solid var(--border);
+}
+.manifesto-header::before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange-dim), var(--orange));
+  margin-bottom: 28px;
+}
+.label {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.label::before {
+  content: '';
+  display: block;
+  width: 20px; height: 1.5px;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+.manifesto-title {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 11vw, 88px);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 0.88;
+  margin-bottom: 28px;
+}
+.manifesto-title .orange { color: var(--orange); }
+.manifesto-sub {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gray-metal);
+}
+
+.manifesto-body { display: flex; flex-direction: column; }
+
+.opening {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: clamp(22px, 4vw, 30px);
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  color: var(--white);
+  margin-bottom: 36px;
+  padding-left: 22px;
+  border-left: 3px solid var(--orange);
+}
+
+.manifesto-body p {
+  font-size: clamp(15px, 2vw, 17px);
+  line-height: 1.85;
+  color: var(--gray-light);
+  margin-bottom: 28px;
+}
+.manifesto-body p strong { color: var(--white); font-weight: 600; }
+.manifesto-body p em { color: var(--orange); font-style: normal; }
+
+.conviction {
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-left: 3px solid var(--orange);
+  border-radius: 3px;
+  padding: 26px 32px;
+  margin: 4px 0 36px;
+}
+.conviction p {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: clamp(18px, 3vw, 26px);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.3;
+  margin-bottom: 0 !important;
+}
+.conviction p span { color: var(--orange); }
+
+.divider { height: 1px; background: var(--border); margin: 48px 0; }
+
+.section-label {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border-hi); }
+
+.beliefs {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 48px;
+}
+.belief {
+  background: var(--surface);
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: 20px;
+  align-items: start;
+  transition: background 0.2s;
+  position: relative;
+}
+.belief::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--border);
+  transition: background 0.2s;
+}
+.belief:first-child::before { display: none; }
+.belief:hover { background: var(--surface-2); }
+.belief:hover::before { background: var(--orange); }
+.belief-title {
+  font-family: var(--font-cond);
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding-top: 2px;
+}
+.belief-desc { font-size: 14px; line-height: 1.75; color: var(--gray-light); }
+.belief-desc strong { color: var(--white); }
+
+.founder-block {
+  background: var(--surface-3);
+  border: 1px solid var(--border-hi);
+  border-radius: 3px;
+  padding: 40px;
+  margin: 4px 0 36px;
+  position: relative;
+  overflow: hidden;
+}
+.founder-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--orange-dim), var(--orange), var(--orange-hi), transparent);
+}
+.founder-block p {
+  font-size: clamp(15px, 2vw, 16px);
+  line-height: 1.85;
+  color: var(--gray-light);
+  margin-bottom: 22px !important;
+}
+.founder-block p:last-child { margin-bottom: 0 !important; }
+.founder-block p strong { color: var(--white); font-weight: 600; }
+.founder-block p em { color: var(--orange); font-style: normal; }
+
+.product-callout {
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-left: 3px solid var(--orange);
+  border-radius: 3px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+.product-callout-title {
+  font-family: var(--font-cond);
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+.product-callout-desc { font-size: 14px; line-height: 1.7; color: var(--gray-light); }
+.product-callout-desc strong { color: var(--white); }
+
+.non-neg {
+  list-style: none;
+  margin: 4px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.non-neg li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.non-neg li::before { content: '→'; color: var(--orange); font-size: 14px; flex-shrink: 0; }
+
+.closing {
+  text-align: center;
+  padding: 56px 0 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+}
+.closing-headline {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 7vw, 60px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 0.92;
+  margin-bottom: 18px;
+  color: var(--white);
+}
+.closing-headline span { color: var(--orange); }
+.closing-sub {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gray-metal);
+  margin-bottom: 36px;
+}
+.closing-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 14px 32px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--orange);
+  color: #000;
+}
+.closing-btn:hover {
+  background: var(--orange-hi);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(255,98,0,0.35);
+}
+
+.page-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 64px;
+  padding-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.page-footer-brand { font-family: var(--font-display); font-size: 14px; letter-spacing: 0.2em; color: var(--gray-mid); }
+.page-footer-brand span { color: var(--orange); }
+.page-footer-copy { font-family: var(--font-cond); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-mid); }
+
+@media (max-width: 560px) {
+  .belief { grid-template-columns: 1fr; gap: 6px; }
+  .founder-block { padding: 28px 24px; }
+  .page-footer { flex-direction: column; gap: 8px; }
+}
+@media print {
+  body { background: #080808; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .topbar { position: static; }
+  body::before { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="back-link">Back to Home</a>
+  <div class="topbar-brand">LIGHTNING <span>STRATEGIES</span></div>
+</div>
+
+<div class="page-wrap">
+
+  <div class="manifesto-header">
+    <div class="label">What We Stand For</div>
+    <h1 class="manifesto-title">Lightning<br><span class="orange">Strategies</span><br>Manifesto</h1>
+    <div class="manifesto-sub">Bitcoin · AI · Independence · Est. 2022</div>
+  </div>
+
+  <div class="manifesto-body">
+
+    <p class="opening">We refuse to accept a world where the rules are rigged.</p>
+
+    <p>The fiat system is ungodly corrupt. It is the closest thing humans have ever created to a time machine for the powerful: governments print money out of thin air, debase our currency, spend without consequence, and leave everyday people and businesses holding the bag of inflation — <strong>the silent tax that quietly steals your purchasing power and your future.</strong></p>
+
+    <div class="conviction">
+      <p>Fix the money, fix the world.<br><span>That is not a slogan. It is a conviction.</span></p>
+    </div>
+
+    <p>We believe open-source technology combined with the hardest money ever created is the path to true human progress. <strong>Bitcoin is backed by the laws of thermodynamics and mathematics</strong> — not the promises of politicians. AI is a deflationary force that will drive the cost of goods and services down over time, increasing everyone's purchasing power and unlocking real innovation and happier lives.</p>
+
+    <p>We want to see a hard fork in society: individuals and businesses reclaiming their sovereignty, cutting out the middlemen, and settling transactions on the best money humanity has ever known.</p>
+
+    <p><strong>That is why Lightning Strategies exists.</strong></p>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Our three non-negotiable beliefs</div>
+
+    <div class="beliefs">
+      <div class="belief">
+        <div class="belief-title">Sovereignty</div>
+        <div class="belief-desc">Your money, your data, your business should belong to you — <strong>not to banks, governments, or private equity.</strong></div>
+      </div>
+      <div class="belief">
+        <div class="belief-title">Privacy</div>
+        <div class="belief-desc">What you do with your money and your information is <strong>no one else's business.</strong></div>
+      </div>
+      <div class="belief">
+        <div class="belief-title">Transparency</div>
+        <div class="belief-desc">We will <strong>never hide fees, never take equity, and never lock you into subscriptions.</strong></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">The Founder's Story</div>
+
+    <div class="founder-block">
+      <p>I didn't always see this clearly. As an economics major I thought I understood finance — until I discovered Bitcoin in 2017. That opened my eyes to the deep corruption and Ponzi-like nature of the fiat system.</p>
+      <p>I lived the rollercoaster: rode the 2017 bull run, bought heavily during the 2020 COVID crash, sold too early at ~$45k, and still turned that into my dream car, engagement ring, house down payment, wedding, and honeymoon. <strong>I paid tuition to the market the hard way</strong> — including losing Bitcoin by giving away my private keys.</p>
+      <p>In 2022 I founded this company with a vision to raise $10–20M for a Bitcoin mining operation. We only raised $1.5M, so we pivoted. I kept mining personally and using the entity to bridge into the new system. <strong>Today I live fully on the Bitcoin standard</strong> — not as theory, but as daily practice.</p>
+      <p><em>And I want the same freedom for you.</em></p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">What We Built</div>
+
+    <p>We built Lightning Strategies as the exact products and services I wish existed when I was starting this journey:</p>
+
+    <div class="product-callout">
+      <div class="product-callout-title">The Sovereign Treasury OS</div>
+      <div class="product-callout-desc">Your AI-powered Bitcoin Treasury &amp; Succession Operating System that handles <strong>cost-basis tracking, tax optimization, rebalancing suggestions, and multi-sig succession planning</strong> — so your life's work stays protected and grows on the Bitcoin standard.</div>
+    </div>
+
+    <div class="product-callout">
+      <div class="product-callout-title">Fractional Chief Bitcoin Officer</div>
+      <div class="product-callout-desc">Real human expertise and accountability that turns complex Bitcoin strategy into <strong>simple, actionable execution</strong> — paired with advisory services and weekly accountability.</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Our commitments to you</div>
+
+    <ul class="non-neg">
+      <li>We do not take equity</li>
+      <li>We do not sell subscriptions</li>
+      <li>We do not compromise</li>
+    </ul>
+
+    <p>We exist to help <strong>high-net-worth families, multi-generational businesses, and every independent owner</strong> opt out of the inflationary trap and step confidently into the Bitcoin standard — before they get priced out forever.</p>
+
+    <div class="closing">
+      <div class="closing-headline">This is<br><span>Lightning Strategies.</span></div>
+      <div class="closing-sub">Welcome aboard.</div>
+      <a href="index.html" class="closing-btn">Back to Home →</a>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="page-footer-brand">LIGHTNING <span>STRATEGIES</span></div>
+    <div class="page-footer-copy">© 2022 Lightning Strategies · Bitcoin · AI · Independence</div>
+  </div>
+
+</div>
+
+</body>
+</html>

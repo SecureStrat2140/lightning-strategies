@@ -187,6 +187,63 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-d1{transition-delay:0.1s}.reveal-d2{transition-delay:0.2s}.reveal-d3{transition-delay:0.3s}
+/* === V2 ADDITIONS === */
+.nav-item{position:relative}
+.nav-item .dropdown{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);min-width:260px;background:var(--surface-2);border:1px solid var(--border-hi);border-radius:6px;padding:8px;list-style:none;opacity:0;pointer-events:none;transition:opacity 0.15s ease,top 0.15s ease;box-shadow:0 12px 40px rgba(0,0,0,0.45);z-index:110}
+.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{opacity:1;pointer-events:auto;top:calc(100% + 8px)}
+.nav-item .dropdown::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.dropdown li{margin:0}
+.dropdown a{display:block;padding:10px 14px;font-family:var(--font-cond);font-weight:600;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-light);border-radius:4px;transition:background 0.15s,color 0.15s}
+.dropdown a:hover{background:var(--surface-3);color:var(--gold)}
+.dropdown a small{display:block;font-family:var(--font-body);font-weight:400;font-size:11px;letter-spacing:0.02em;text-transform:none;color:var(--gray-metal);margin-top:3px}
+.nav-caret{font-size:9px;margin-left:4px;opacity:0.6}
+#services{background:var(--black)}
+.svc-grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:760px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.svc-grid{grid-template-columns:repeat(4,1fr)}}
+.svc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;position:relative;transition:border-color 0.2s,background 0.2s;text-decoration:none;color:inherit}
+.svc-card:hover{border-color:var(--gold);background:var(--surface-2)}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--border);transition:background 0.2s}
+.svc-card:hover::before{background:var(--gold)}
+.svc-card.featured::before{background:var(--gold);height:3px}
+.svc-tag{font-family:var(--font-cond);font-weight:700;font-size:9px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:inline-flex;align-items:center;gap:8px}
+.svc-title{font-family:var(--font-cond);font-weight:900;font-size:clamp(18px,2.2vw,22px);letter-spacing:0.04em;text-transform:uppercase;line-height:1.15;margin-bottom:10px;color:var(--white)}
+.svc-price{font-family:var(--font-display);font-size:22px;color:var(--gold);letter-spacing:0.05em;line-height:1;margin-bottom:4px}
+.svc-price-note{font-family:var(--font-cond);font-weight:600;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray-metal);margin-bottom:16px}
+.svc-desc{font-size:13px;line-height:1.6;color:var(--gray-light);flex-grow:1;margin-bottom:20px}
+.svc-link{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:6px;transition:gap 0.2s}
+.svc-card:hover .svc-link{gap:10px}
+#advisors{background:var(--surface)}
+.adv-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:600px){.adv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.adv-grid{grid-template-columns:repeat(3,1fr)}}
+.adv-card{background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:24px;display:flex;flex-direction:column;align-items:flex-start;transition:border-color 0.2s}
+.adv-card:hover{border-color:var(--gold)}
+.adv-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--surface-3),var(--ink));border:1.5px solid var(--border-hi);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--gold);font-family:var(--font-display);font-size:20px;letter-spacing:0.08em}
+.adv-role{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.adv-name{font-family:var(--font-cond);font-weight:700;font-size:15px;color:var(--off-white);margin-bottom:6px;letter-spacing:0.02em}
+.adv-desc{font-size:13px;color:var(--gray-light);line-height:1.55;margin-bottom:14px;flex-grow:1}
+.adv-status{font-family:var(--font-cond);font-weight:600;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray-metal);padding:4px 10px;border:1px solid var(--border-hi);border-radius:2px}
+.adv-footer{margin-top:40px;text-align:center}
+#resources{background:var(--black)}
+.res-grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:760px){.res-grid{grid-template-columns:repeat(3,1fr)}}
+.res-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:border-color 0.2s,transform 0.2s}
+.res-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.res-card.stub{opacity:0.55;cursor:default}
+.res-card.stub:hover{transform:none;border-color:var(--border)}
+.res-kind{font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.res-title{font-family:var(--font-cond);font-weight:700;font-size:18px;color:var(--white);letter-spacing:0.02em;line-height:1.25;margin-bottom:10px}
+.res-desc{font-size:13px;color:var(--gray-light);line-height:1.6;flex-grow:1;margin-bottom:16px}
+.res-link{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold)}
+.press-bar{background:var(--ink);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 0}
+.press-bar-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:28px}
+.press-label{font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:var(--gray-metal)}
+.press-logo{font-family:var(--font-cond);font-weight:700;font-size:13px;letter-spacing:0.18em;color:var(--gray-mid);opacity:0.75;text-transform:uppercase;transition:color 0.15s,opacity 0.15s}
+.press-logo:hover{color:var(--gold);opacity:1}
+.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -211,13 +268,33 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
       <div class="nav-wordmark">LIGHTNING <span>STRATEGIES</span></div>
     </div>
     <ul class="nav-links">
-      <li><a href="#problem">The Problem</a></li>
-      <li><a href="#offer">How It Works</a></li>
+      <li class="nav-item"><a href="#services">Services <span class="nav-caret">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="/estimate.html">Free Treasury Assessment<small>Custom model in 24 hours</small></a></li>
+          <li><a href="/services/treasury-setup.html">Treasury Setup &amp; BLOC Build<small>One-time engagement</small></a></li>
+          <li><a href="/services/fractional-cbo.html">Fractional CBO Retainer<small>Ongoing monthly advisory</small></a></li>
+          <li><a href="/blueprint.html">The Bitcoin Blueprint<small>Free DIY onboarding guide</small></a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="#about">About <span class="nav-caret">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="/philosophy.html">Philosophy &amp; Manifesto</a></li>
+          <li><a href="#advisors">Advisory Council</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="#resources">Resources <span class="nav-caret">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="/blueprint.html">The Bitcoin Blueprint</a></li>
+          <li><a href="/philosophy.html">Manifesto</a></li>
+          <li><a href="#roi">The Math</a></li>
+          <li><a href="/blog.html">Insights <small>Coming soon</small></a></li>
+        </ul>
+      </li>
       <li><a href="#roi">The Math</a></li>
-      <li><a href="#about">About</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="https://calendly.com/securestrategies-proton/30min" target="_blank" class="btn btn-ghost">Contact</a>
+      <a href="/estimate.html" class="btn btn-ghost">Free Assessment</a>
       <a href="https://calendly.com/securestrategies-proton/30min" target="_blank" class="btn btn-primary">Book a Call</a>
     </div>
   </div>
@@ -231,8 +308,8 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
         <h1 class="hero-headline reveal reveal-d1">BEAT HEALTHCARE<br><span class="line-gold">INFLATION FOREVER</span></h1>
         <p class="hero-sub reveal reveal-d2"><strong>Your fractional Chief Bitcoin Officer.</strong> We build, implement, and manage a corporate Bitcoin treasury + BLOC credit facility so self-funded employers can pre-fund claims and let Bitcoin growth outpace 6.5&#8211;9.5%+ annual healthcare inflation.</p>
         <div class="hero-cta reveal reveal-d3">
-          <a href="#offer" class="btn btn-primary">See How It Works &#8594;</a>
-          <a href="#problem" class="btn btn-ghost">The Problem</a>
+          <a href="/estimate.html" class="btn btn-primary">Free Treasury Assessment &#8594;</a>
+          <a href="#services" class="btn btn-ghost">Our Services</a>
         </div>
         <div class="hero-stat-row reveal reveal-d3">
           <div class="hero-stat"><div class="hero-stat-num">6.5&#8211;9.5%</div><div class="hero-stat-label">Annual Claims Inflation</div></div>
@@ -317,49 +394,46 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
   </div>
 </section>
 
-<section id="offer">
+<section id="services">
   <div class="container">
     <div class="section-header">
-      <div class="label reveal">How It Works</div>
-      <h2 class="section-title reveal reveal-d1">TWO PHASES.<br><span class="gold">ONE OUTCOME.</span></h2>
-      <p class="section-desc reveal reveal-d2">Every engagement is built around a single goal: make your health plan reserves grow faster than your claims costs. We set it up, then we manage it.</p>
+      <div class="label reveal">Our Services</div>
+      <h2 class="section-title reveal reveal-d1">FOUR WAYS<br><span class="gold">TO ENGAGE US</span></h2>
+      <p class="section-desc reveal reveal-d2">From a free custom assessment to a full fractional CBO engagement, every service is built around one outcome: making your reserves grow faster than your claims trend.</p>
     </div>
-    <div class="tier-grid reveal reveal-d2">
-      <div class="tier">
-        <div class="tier-label">PHASE 01</div>
-        <div class="tier-name">Treasury Setup &amp;<br>BLOC Integration</div>
-        <div class="tier-price">$25K&#8211;$50K</div>
-        <div class="tier-price-note">ONE-TIME SETUP</div>
-        <p class="tier-desc">We build your corporate Bitcoin treasury from the ground up &#8212; policy, custody, credit facility, modeling, and board education. Everything you need to launch with confidence.</p>
-        <ul class="tier-list">
-          <li>Corporate Bitcoin treasury policy &amp; risk framework</li>
-          <li>BLOC credit facility integration &amp; configuration</li>
-          <li>Custom financial modeling: BTC growth vs. claims trend</li>
-          <li>Multi-sig custody setup (Unchained Capital)</li>
-          <li>Board &amp; C-suite education session</li>
-          <li>Tax strategy &amp; compliance framework</li>
-          <li>Initial Bitcoin acquisition execution</li>
-        </ul>
-        <a href="#cta" class="btn btn-ghost" style="font-size:11px;align-self:flex-start;">Start the Setup &#8594;</a>
-      </div>
-      <div class="tier tier-featured">
-        <div class="tier-badge">Ongoing</div>
-        <div class="tier-label">PHASE 02</div>
-        <div class="tier-name">Fractional CBO<br>Retainer</div>
-        <div class="tier-price">$8,000/MO</div>
-        <div class="tier-price-note">MONTHLY RETAINER</div>
-        <p class="tier-desc">Your embedded Chief Bitcoin Officer. I monitor, manage, and optimize your treasury position against your claims data &#8212; so your reserves always outpace your costs.</p>
-        <ul class="tier-list">
-          <li>Monthly treasury performance vs. claims trend reporting</li>
-          <li>BLOC credit facility draws &amp; fiat disbursement management</li>
-          <li>Ongoing rebalancing &amp; accumulation strategy</li>
-          <li>Tax optimization &amp; quarterly compliance reporting</li>
-          <li>Renewal cycle strategy &amp; stop-loss negotiation support</li>
-          <li>Board-ready quarterly treasury reports</li>
-          <li>Priority access &#8212; 24-hour response guarantee</li>
-        </ul>
-        <a href="#cta" class="btn btn-primary" style="font-size:11px;align-self:flex-start;">Book a Strategy Call &#8594;</a>
-      </div>
+    <div class="svc-grid reveal reveal-d2">
+      <a href="/estimate.html" class="svc-card featured">
+        <div class="svc-tag">&#9889; Start Here &#183; Free</div>
+        <div class="svc-title">Health Plan Treasury Assessment</div>
+        <div class="svc-price">FREE</div>
+        <div class="svc-price-note">24-Hour Turnaround</div>
+        <p class="svc-desc">Answer six questions about your self-funded plan. We build a custom model showing what a Bitcoin-powered treasury would have done against your actual claims trend &#8212; and deliver it within 24 hours. No obligation.</p>
+        <span class="svc-link">Get Your Assessment &#8594;</span>
+      </a>
+      <a href="/services/treasury-setup.html" class="svc-card">
+        <div class="svc-tag">One-Time Engagement</div>
+        <div class="svc-title">Treasury Setup &amp; BLOC Build</div>
+        <div class="svc-price">$25K&#8211;$50K</div>
+        <div class="svc-price-note">One-Time Setup</div>
+        <p class="svc-desc">We stand up your corporate Bitcoin treasury from zero &#8212; policy, multi-sig custody, BLOC credit facility, custom modeling, board education, tax framework, and initial acquisition execution. You launch with governance in place.</p>
+        <span class="svc-link">See What's Included &#8594;</span>
+      </a>
+      <a href="/services/fractional-cbo.html" class="svc-card">
+        <div class="svc-tag">Monthly Retainer</div>
+        <div class="svc-title">Fractional CBO Retainer</div>
+        <div class="svc-price">$8,000/mo</div>
+        <div class="svc-price-note">Ongoing Advisory</div>
+        <p class="svc-desc">Your embedded Chief Bitcoin Officer. Monthly performance reports vs. claims trend, BLOC draws, rebalancing, tax optimization, quarterly board briefings, and renewal-cycle strategy. 24-hour priority response.</p>
+        <span class="svc-link">Explore the Retainer &#8594;</span>
+      </a>
+      <a href="/blueprint.html" class="svc-card">
+        <div class="svc-tag">Free Resource</div>
+        <div class="svc-title">The Bitcoin Blueprint</div>
+        <div class="svc-price">FREE</div>
+        <div class="svc-price-note">Self-Guided Tutorial</div>
+        <p class="svc-desc">A three-step DIY Bitcoin onboarding guide &#8212; ProtonMail, Strike, cold wallet. For founders and finance leaders who want to hold Bitcoin personally before building a corporate treasury. No email required.</p>
+        <span class="svc-link">Read the Blueprint &#8594;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -424,37 +498,116 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
   </div>
 </section>
 
-<section id="cta">
-  <div class="container" style="max-width:720px">
-    <div class="label reveal" style="justify-content:center;margin-bottom:20px">Ready to Move</div>
-    <h2 class="cta-headline reveal reveal-d1">STOP LOSING TO<br><span class="gold">HEALTHCARE INFLATION</span></h2>
-    <p class="cta-sub reveal reveal-d2">Book a 30-minute strategy call. No pitch deck. No pressure. Just a straight conversation about your claims trend, your reserves, and whether a Bitcoin treasury makes mathematical sense for your plan. If it doesn't, I'll tell you.</p>
-    <div class="cta-btns reveal reveal-d3">
-      <a href="https://calendly.com/securestrategies-proton/30min" target="_blank" class="btn btn-primary" style="font-size:12px">Book a Strategy Call &#8594;</a>
-      <a href="#offer" class="btn btn-ghost" style="font-size:12px">See How It Works</a>
+<section id="advisors">
+  <div class="container">
+    <div class="section-header">
+      <div class="label reveal">Advisory Council</div>
+      <h2 class="section-title reveal reveal-d1">STRATEGIC GUIDANCE<br><span class="gold">FROM PRACTITIONERS</span></h2>
+      <p class="section-desc reveal reveal-d2">Lightning Strategies is advised by veteran operators across treasury, benefits, custody, and tax &#8212; so every recommendation we make reflects decades of field-tested judgment, not Bitcoin theory.</p>
+    </div>
+    <div class="adv-grid reveal reveal-d2">
+      <div class="adv-card">
+        <div class="adv-avatar">CFO</div>
+        <div class="adv-role">Corporate Treasury</div>
+        <div class="adv-name">Advisor &#8212; Announcing Soon</div>
+        <p class="adv-desc">Former middle-market CFO with 20+ years managing corporate reserves, stop-loss renewals, and board-level risk policy.</p>
+        <span class="adv-status">Seat Reserved</span>
+      </div>
+      <div class="adv-card">
+        <div class="adv-avatar">ACT</div>
+        <div class="adv-role">Benefits Actuary</div>
+        <div class="adv-name">Advisor &#8212; Announcing Soon</div>
+        <p class="adv-desc">Credentialed actuary with deep experience modeling self-funded claims trend, attachment points, and stop-loss economics.</p>
+        <span class="adv-status">Seat Reserved</span>
+      </div>
+      <div class="adv-card">
+        <div class="adv-avatar">BTC</div>
+        <div class="adv-role">Custody &amp; Security</div>
+        <div class="adv-name">Advisor &#8212; Announcing Soon</div>
+        <p class="adv-desc">Multi-sig custody expert with a decade of Bitcoin-native engineering &#8212; cold storage, key ceremonies, inheritance protocols.</p>
+        <span class="adv-status">Seat Reserved</span>
+      </div>
+      <div class="adv-card">
+        <div class="adv-avatar">LAW</div>
+        <div class="adv-role">ERISA &amp; Tax Counsel</div>
+        <div class="adv-name">Advisor &#8212; Announcing Soon</div>
+        <p class="adv-desc">ERISA attorney and digital-asset tax specialist who structures treasury policy, fiduciary framework, and multi-state compliance.</p>
+        <span class="adv-status">Seat Reserved</span>
+      </div>
+      <div class="adv-card">
+        <div class="adv-avatar">TPA</div>
+        <div class="adv-role">TPA Operations</div>
+        <div class="adv-name">Advisor &#8212; Announcing Soon</div>
+        <p class="adv-desc">Third-party administrator principal who understands the operational mechanics of claims adjudication, funding, and reinsurance.</p>
+        <span class="adv-status">Seat Reserved</span>
+      </div>
+      <div class="adv-card">
+        <div class="adv-avatar">OPS</div>
+        <div class="adv-role">Bitcoin Operator</div>
+        <div class="adv-name">Advisor &#8212; Announcing Soon</div>
+        <p class="adv-desc">Long-tenured Bitcoin practitioner &#8212; node operator, lightning integrator, and capital allocator with treasury-scale experience.</p>
+        <span class="adv-status">Seat Reserved</span>
+      </div>
+    </div>
+    <div class="adv-footer reveal">
+      <a href="/advisory-council.html" class="btn btn-ghost">Full Advisory Council &#8594;</a>
     </div>
   </div>
 </section>
 
-<div class="lead-form-wrap">
-  <h2>&#9889; FREE HEALTH PLAN TREASURY ASSESSMENT</h2>
-  <p class="form-subtitle">See how a Bitcoin-powered treasury could outpace your claims trend. Answer 6 questions and we'll build your custom model within 24 hours.</p>
-  <form id="leadForm">
-    <div class="form-row">
-      <div class="form-field"><label for="leadName">Full Name</label><input type="text" id="leadName" placeholder="Jane Smith" required></div>
-      <div class="form-field"><label for="leadEmail">Work Email</label><input type="email" id="leadEmail" placeholder="jane@company.com" required></div>
+<section id="resources">
+  <div class="container">
+    <div class="section-header">
+      <div class="label reveal">Resources</div>
+      <h2 class="section-title reveal reveal-d1">BITCOIN-LITERATE<br><span class="gold">FROM DAY ONE</span></h2>
+      <p class="section-desc reveal reveal-d2">We publish the thinking behind the practice &#8212; tutorials, principles, and working models. Start with these.</p>
     </div>
-    <div class="form-field"><label for="leadCompany">Company Name</label><input type="text" id="leadCompany" placeholder="Acme Corp" required></div>
-    <div class="form-field"><label for="q1">1. How many employees are enrolled in your self-funded health plan?</label><select id="q1" required><option value="">Select employee count</option><option value="200-499">200&#8211;499 employees</option><option value="500-999">500&#8211;999 employees</option><option value="1000+">1,000+ employees</option></select></div>
-    <div class="form-field"><label for="q2">2. What is your current specific stop-loss attachment point?</label><select id="q2" required><option value="">Select attachment point</option><option value="50k-or-lower">$50,000 or lower</option><option value="75k">$75,000</option><option value="100k">$100,000</option><option value="125k">$125,000</option><option value="150k">$150,000</option><option value="175k">$175,000</option><option value="200k">$200,000</option><option value="250k-or-higher">$250,000 or higher</option><option value="not-sure">Not sure / Prefer not to say</option></select></div>
-    <div class="form-field"><label for="q3">3. What was your medical cost trend (per employee per year) over the last 3 years?</label><select id="q3" required><option value="">Select trend range</option><option value="under-5">Under 5%</option><option value="5-7">5&#8211;7%</option><option value="7-10">7&#8211;10%</option><option value="10-plus">10%+</option><option value="unsure">Unsure / Need to check</option></select></div>
-    <div class="form-field"><label for="q4">4. What financial instrument does your CFO primarily use to hold cash reserves for future claims?</label><select id="q4" required><option value="">Select instrument</option><option value="money-market">Money market account</option><option value="tbills">T-bills / Treasury bonds</option><option value="cd">Certificates of deposit (CDs)</option><option value="checking-savings">Standard checking / savings</option><option value="other">Other / Not sure</option></select></div>
-    <div class="form-field"><label for="q5">5. What is your biggest frustration or challenge with your current self-funded plan?</label><textarea id="q5" placeholder="E.g., unpredictable claims, rising stop-loss premiums, budget volatility..." rows="3"></textarea></div>
-    <div class="form-field"><label for="q6">6. What is one specific outcome you'd like to achieve with your health plan in the next 12&#8211;24 months?</label><textarea id="q6" placeholder="E.g., stabilize costs, build reserves, reduce renewal pressure..." rows="3"></textarea></div>
-    <button type="submit" class="form-submit">Get My Treasury Assessment &#8594;</button>
-  </form>
-  <div id="leadMessage" style="margin-top:20px;padding:15px;border-radius:8px;font-weight:500"></div>
+    <div class="res-grid reveal reveal-d2">
+      <a href="/blueprint.html" class="res-card">
+        <div class="res-kind">Guide</div>
+        <div class="res-title">The Bitcoin Blueprint</div>
+        <p class="res-desc">A free, three-step DIY onboarding tutorial &#8212; ProtonMail, Strike, and cold-storage setup. Built for founders and finance leaders who want personal sovereignty before corporate strategy.</p>
+        <span class="res-link">Read the Guide &#8594;</span>
+      </a>
+      <a href="/philosophy.html" class="res-card">
+        <div class="res-kind">Manifesto</div>
+        <div class="res-title">Fix the Money, Fix the World</div>
+        <p class="res-desc">Our principles on sovereignty, privacy, and transparency &#8212; plus the non-negotiables that shape every engagement (no equity, no subscriptions, no compromise).</p>
+        <span class="res-link">Read the Manifesto &#8594;</span>
+      </a>
+      <div class="res-card stub">
+        <div class="res-kind">Insights</div>
+        <div class="res-title">Field Notes &amp; Research</div>
+        <p class="res-desc">Case studies, market analysis, and working papers on Bitcoin-powered treasuries, BLOC mechanics, and the self-funded healthcare inflation curve.</p>
+        <span class="res-link">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="press-bar">
+  <div class="container press-bar-inner">
+    <span class="press-label">Partners &amp; Stack</span>
+    <span class="press-logo">Strike BLOC</span>
+    <span class="press-logo">Unchained</span>
+    <span class="press-logo">Trezor</span>
+    <span class="press-logo">Proton</span>
+    <span class="press-logo">Calendly</span>
+    <span class="press-logo">Stripe</span>
+  </div>
 </div>
+
+<section id="cta">
+  <div class="container" style="max-width:720px">
+    <div class="label reveal" style="justify-content:center;margin-bottom:20px">Ready to Move</div>
+    <h2 class="cta-headline reveal reveal-d1">STOP LOSING TO<br><span class="gold">HEALTHCARE INFLATION</span></h2>
+    <p class="cta-sub reveal reveal-d2">Two ways to start. Get your free custom treasury assessment within 24 hours, or book a 30-minute strategy call. No pitch deck, no pressure &#8212; just the math against your plan. If it doesn't work, we tell you.</p>
+    <div class="cta-btns reveal reveal-d3">
+      <a href="/estimate.html" class="btn btn-primary" style="font-size:12px">Get a Free Assessment &#8594;</a>
+      <a href="https://calendly.com/securestrategies-proton/30min" target="_blank" class="btn btn-ghost" style="font-size:12px">Book a Strategy Call</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="container">
@@ -487,16 +640,28 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0
       <div>
         <span class="footer-col-title">Services</span>
         <ul class="footer-links">
-          <li><a href="#offer">Treasury Setup &amp; BLOC Integration</a></li>
-          <li><a href="#offer">Fractional CBO Retainer</a></li>
-          <li><a href="#roi">The Math</a></li>
+          <li><a href="/estimate.html">Free Treasury Assessment</a></li>
+          <li><a href="/services/treasury-setup.html">Treasury Setup &amp; BLOC Build</a></li>
+          <li><a href="/services/fractional-cbo.html">Fractional CBO Retainer</a></li>
+          <li><a href="/blueprint.html">The Bitcoin Blueprint</a></li>
         </ul>
       </div>
       <div>
         <span class="footer-col-title">Company</span>
         <ul class="footer-links">
-          <li><a href="#about">My Story</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="/philosophy.html">Philosophy &amp; Manifesto</a></li>
+          <li><a href="#advisors">Advisory Council</a></li>
           <li><a href="https://calendly.com/securestrategies-proton/30min" target="_blank">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">Resources</span>
+        <ul class="footer-links">
+          <li><a href="/blueprint.html">The Bitcoin Blueprint</a></li>
+          <li><a href="/philosophy.html">Manifesto</a></li>
+          <li><a href="#roi">The Math</a></li>
+          <li><a href="/blog.html">Insights &#8212; Coming Soon</a></li>
         </ul>
       </div>
     </div>
@@ -516,29 +681,6 @@ const navEl=document.querySelector('nav');
 window.addEventListener('scroll',()=>{navEl.style.borderBottomColor=window.scrollY>40?'var(--border-hi)':'var(--border)'});
 const ctaSection=document.getElementById('cta');const floatingBtn=document.getElementById('floatingCta');
 if(ctaSection&&floatingBtn){const ctaObserver=new IntersectionObserver((entries)=>{entries.forEach(e=>{floatingBtn.classList.toggle('hidden',e.isIntersecting)})},{threshold:0.3});ctaObserver.observe(ctaSection)}
-document.getElementById('leadForm').addEventListener('submit',async function(e){
-  e.preventDefault();
-  const messageDiv=document.getElementById('leadMessage');
-  const urlParams=new URLSearchParams(window.location.search);
-  const formData={
-    name:document.getElementById('leadName').value,
-    email:document.getElementById('leadEmail').value,
-    company:document.getElementById('leadCompany').value,
-    size:document.getElementById('q1').value,
-    stop_loss:document.getElementById('q2').value,
-    cost_trend:document.getElementById('q3').value,
-    reserve_instrument:document.getElementById('q4').value,
-    biggest_challenge:document.getElementById('q5').value,
-    desired_outcome:document.getElementById('q6').value,
-    source:urlParams.get('utm_source')||'website',
-    utm_medium:urlParams.get('utm_medium')||'',
-    utm_campaign:urlParams.get('utm_campaign')||''
-  };
-  try{
-    const response=await fetch('http://raspberrypi.local:3001/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(formData)});
-    if(response.ok){messageDiv.innerHTML='<div style="background:#004d00;color:#fff;padding:12px;border-radius:6px">&#10003; You\'re in. We\'ll build your custom treasury assessment and send it within 24 hours.</div>';document.getElementById('leadForm').reset()}else{throw new Error()}
-  }catch(err){messageDiv.innerHTML='<div style="background:#660000;color:#fff;padding:12px;border-radius:6px">Something went wrong. Email us directly at SecureStrategies@proton.me</div>'}
-});
 </script>
 </body>
 </html>
