@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Lightning Strategies</title>
+<meta name="description" content="Not another Bitcoin bro. The story behind Lightning Strategies — Jared Selewski, a decade in employee benefits at the world's top global insurance brokerages, Bitcoin practitioner since 2017.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9889;</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4FMDQ41MK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4FMDQ41MK1');
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --orange:#FF6200;--orange-hi:#FF8040;--orange-dim:#C44D00;
+  --gold:#F7931A;--gold-hi:#FFB347;--gold-dim:rgba(247,147,26,0.15);
+  --black:#080808;--ink:#0D0D0D;--surface:#111111;--surface-2:#161616;--surface-3:#1C1C1C;
+  --border:#202020;--border-hi:#2C2C2C;--gray-mid:#505050;--gray-metal:#747474;--gray-light:#ABABAB;
+  --white:#FFFFFF;--off-white:#EEEEEE;
+  --font-display:'Bebas Neue',sans-serif;--font-cond:'Barlow Condensed',sans-serif;--font-body:'Barlow',sans-serif;
+  --radius:3px;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--black);color:var(--off-white);font-family:var(--font-body);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:'';position:fixed;top:-10%;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse at center,rgba(247,147,26,0.05) 0%,rgba(255,98,0,0.025) 45%,transparent 70%);pointer-events:none;z-index:0}
+a{color:inherit;text-decoration:none}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;padding:0 clamp(20px,5vw,52px);justify-content:space-between}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray-metal);transition:color 0.15s}
+.back-link:hover{color:var(--orange)}
+.back-link::before{content:'←';color:var(--orange);font-size:14px}
+.topbar-right{display:flex;align-items:center;gap:24px}
+.topbar-brand{font-family:var(--font-display);font-size:15px;letter-spacing:0.22em;color:var(--gray-metal)}
+.topbar-brand span{color:var(--orange)}
+.topbar-cta{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;padding:9px 18px 8px;background:var(--orange);color:#000;border-radius:var(--radius);transition:background 0.15s}
+.topbar-cta:hover{background:var(--orange-hi)}
+@media(max-width:600px){.topbar-cta{display:none}}
+
+.page-wrap{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:104px clamp(20px,5vw,48px) 80px}
+
+.page-header{margin-bottom:56px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.page-header::before{content:'';display:block;width:48px;height:3px;background:linear-gradient(90deg,var(--orange-dim),var(--gold));margin-bottom:32px}
+.label{font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:8px;margin-bottom:20px}
+.label::before{content:'';display:block;width:20px;height:1.5px;background:var(--gold);flex-shrink:0}
+.page-title{font-family:var(--font-display);font-size:clamp(48px,9vw,84px);letter-spacing:0.05em;text-transform:uppercase;line-height:0.92;margin-bottom:28px}
+.page-title .orange{color:var(--orange)}
+.page-title .gold{color:var(--gold)}
+.page-sub{font-family:var(--font-cond);font-weight:600;font-size:13px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray-metal)}
+
+.opening{font-family:var(--font-cond);font-weight:700;font-size:clamp(20px,3vw,26px);line-height:1.4;letter-spacing:0.02em;color:var(--white);margin-bottom:36px;padding-left:22px;border-left:3px solid var(--gold)}
+.opening em{color:var(--gold);font-style:normal}
+
+.section-label{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);margin:48px 0 28px;display:flex;align-items:center;gap:12px}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border-hi)}
+
+.story-body p{font-size:clamp(15px,2vw,17px);line-height:1.85;color:var(--gray-light);margin-bottom:24px}
+.story-body p strong{color:var(--white);font-weight:600}
+.story-body p em{color:var(--gold);font-style:normal}
+
+.credentials{display:grid;grid-template-columns:1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:24px 0 48px}
+.cred{background:var(--surface);padding:20px 24px;display:grid;grid-template-columns:36px 1fr;gap:16px;align-items:start}
+.cred-icon{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:rgba(247,147,26,0.08);border-radius:var(--radius)}
+.cred-icon svg{width:16px;height:16px}
+.cred-text{font-size:14px;line-height:1.6;color:var(--gray-light)}
+.cred-text strong{color:var(--white);font-weight:600}
+
+.pull-quote{background:var(--surface);border:1px solid var(--border-hi);border-left:3px solid var(--orange);border-radius:var(--radius);padding:28px 32px;margin:32px 0 40px}
+.pull-quote p{font-family:var(--font-cond);font-weight:700;font-size:clamp(17px,2.6vw,22px);line-height:1.4;letter-spacing:0.04em;color:var(--white);margin:0}
+.pull-quote p span{color:var(--orange)}
+
+.cta-block{text-align:center;padding:48px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:48px}
+.cta-headline{font-family:var(--font-display);font-size:clamp(32px,5vw,48px);letter-spacing:0.06em;color:var(--white);margin-bottom:16px}
+.cta-headline .gold{color:var(--gold)}
+.cta-sub{font-size:15px;color:var(--gray-light);max-width:520px;margin:0 auto 28px;line-height:1.65}
+.cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-weight:700;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;padding:14px 28px 12px;border-radius:var(--radius);cursor:pointer;transition:all 0.2s ease;border:none}
+.btn-primary{background:var(--orange);color:#000}
+.btn-primary:hover{background:var(--orange-hi);transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,98,0,0.35)}
+.btn-ghost{background:transparent;color:var(--off-white);border:1.5px solid var(--border-hi)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+footer{padding:32px 0;border-top:1px solid var(--border);text-align:center;font-family:var(--font-cond);font-weight:600;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray-mid)}
+footer a{color:var(--gray-metal);transition:color 0.15s}
+footer a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="/index.html" class="back-link">Back to Home</a>
+  <div class="topbar-right">
+    <div class="topbar-brand">LIGHTNING <span>STRATEGIES</span></div>
+    <a href="/estimate.html" class="topbar-cta">Free Assessment →</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <div class="page-header">
+    <div class="label">My Story</div>
+    <h1 class="page-title">NOT ANOTHER<br><span class="gold">BITCOIN BRO</span></h1>
+    <div class="page-sub">Jared Selewski · Founder &amp; Chief Bitcoin Officer</div>
+  </div>
+
+  <p class="opening">I&#8217;ve scaled a SoftBank-backed company from 6 to 376 hotels in six months. Sold enterprise SaaS at a pre-IPO and a publicly traded firm. Built books of business at three of the world&#8217;s largest insurance brokerages. <em>And I held Bitcoin through every chapter since 2017.</em></p>
+
+  <div class="credentials">
+    <div class="cred">
+      <div class="cred-icon"><svg viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="10" rx="1" stroke="#F7931A" stroke-width="1.5"/><path d="M5 4V2.5C5 1.7 5.7 1 6.5 1h3C10.3 1 11 1.7 11 2.5V4" stroke="#F7931A" stroke-width="1.5"/></svg></div>
+      <div class="cred-text"><strong>VP of Employee Health &amp; Benefits</strong> at the #1, #3, and #6 ranked global insurance brokerages. Dual licensed.</div>
+    </div>
+    <div class="cred">
+      <div class="cred-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M2 8 L6 4 L10 8" stroke="#F7931A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 4 L6 13" stroke="#F7931A" stroke-width="1.5" stroke-linecap="round"/><rect x="9" y="7" width="5" height="6" rx="1" stroke="#F7931A" stroke-width="1.5"/></svg></div>
+      <div class="cred-text"><strong>SoftBank-backed operator</strong> who scaled a hotel and hospitality portfolio from 6 to 376 properties in six months.</div>
+    </div>
+    <div class="cred">
+      <div class="cred-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13L8 3L13 13" stroke="#F7931A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 9H11" stroke="#F7931A" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="cred-text"><strong>Bitcoin practitioner since 2017</strong> &mdash; through SoftBank, SaaS, and back to benefits.</div>
+    </div>
+  </div>
+
+  <div class="section-label">The Path Here</div>
+
+  <div class="story-body">
+    <p>I started in employee benefits at the #3 global brokerage as an intern who won the national sales challenge, earned a full-time producer role, and built a book of business in Dallas in under three years. Then I got recruited to OYO, the fastest-growing SoftBank portfolio company in the world.</p>
+
+    <p>At OYO I was a Senior Commercial Manager who scaled their U.S. hotel portfolio from 6 to 376 properties in six months. I helped build the underwriting algorithm with SoftBank&#8217;s team to assess and deploy CapEx, grew the team from 4 to 43, and closed the Hooters Hotel in Las Vegas. When the global COO relocated us to Palo Alto to lead a vacation homes launch, I went. When COVID hit, I adapted. I moved through Domio, pre-IPO Paycor (one deal from Presidents Club), and Coupa (publicly traded, Thoma Bravo buyout) building emerging market divisions before returning to what I know best.</p>
+
+    <p>I came back to benefits at the #6 global brokerage, took over a large retiring executive&#8217;s book, grew it, and earned the Vice President title covering both employee benefits and commercial lines. Dual licensed. From there, I was recruited to VP of Employee Health &amp; Benefits at the #1 insurance brokerage firm on the planet, where I was rebuilding a $1.5M book in my home market of Detroit before pivoting to going all in on Lightning Strategies.</p>
+
+    <p>Through SoftBank board rooms, SaaS sales floors, and brokerage C-suites, <em>I held Bitcoin.</em> Accumulating since 2017, watching it deliver returns no reserve instrument could touch while the benefits industry kept recommending the same losing strategy.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>Lightning Strategies is the firm <span>I wish existed</span> when I was advising self-funded employers.</p>
+  </div>
+
+  <div class="story-body">
+    <p>Not another Bitcoin evangelist. Not another insurance consultant. <strong>A practitioner-led Chief Bitcoin Officer advisory firm</strong> built specifically for founder-led, self-funded mid-market employers that refuse to let healthcare inflation outpace their reserves.</p>
+
+    <p>I sit between two worlds most advisors never bridge: the operational reality of self-funded health plans, and the hardest money ever created. The mandate is simple &mdash; build a treasury that compounds faster than your claims trend, governed under a board-approved policy, owned and controlled by you.</p>
+
+    <p>If the math works for your plan, we engage. If it doesn&#8217;t, I tell you before you spend a dollar. That is the whole job.</p>
+  </div>
+
+  <div class="cta-block">
+    <h2 class="cta-headline">SEE IF THE <span class="gold">MATH WORKS</span></h2>
+    <p class="cta-sub">Free Health Plan Treasury Assessment. 24-hour turnaround. Sized to your plan. No obligation, no pitch.</p>
+    <div class="cta-btns">
+      <a href="/estimate.html" class="btn btn-primary">Free Treasury Assessment →</a>
+      <a href="https://calendly.com/securestrategies-proton/30min" target="_blank" class="btn btn-ghost">Book a Strategy Call</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>⚡ Lightning Strategies · Fractional Chief Bitcoin Officer Advisory · Built for Founder-Led Self-Funded Employers</div>
+  <div style="margin-top:10px"><a href="/index.html">Home</a> &middot; <a href="/our-practice.html">Our Practice</a> &middot; <a href="/philosophy.html">Philosophy</a> &middot; <a href="/estimate.html">Free Assessment</a></div>
+</footer>
+
+</body>
+</html>

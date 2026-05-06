@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Practice — Lightning Strategies</title>
+<meta name="description" content="The Lightning Strategies engagement model — Bitcoin treasury setup, Fractional Chief Bitcoin Officer retainer, and the free Health Plan Treasury Assessment. Built for founder-led self-funded employers (200–1,000 employees).">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9889;</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4FMDQ41MK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4FMDQ41MK1');
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --orange:#FF6200;--orange-hi:#FF8040;--orange-dim:#C44D00;
+  --gold:#F7931A;--gold-hi:#FFB347;--gold-dim:rgba(247,147,26,0.15);
+  --black:#080808;--ink:#0D0D0D;--surface:#111111;--surface-2:#161616;--surface-3:#1C1C1C;
+  --border:#202020;--border-hi:#2C2C2C;--gray-mid:#505050;--gray-metal:#747474;--gray-light:#ABABAB;
+  --white:#FFFFFF;--off-white:#EEEEEE;
+  --font-display:'Bebas Neue',sans-serif;--font-cond:'Barlow Condensed',sans-serif;--font-body:'Barlow',sans-serif;
+  --radius:3px;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--black);color:var(--off-white);font-family:var(--font-body);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:'';position:fixed;top:-10%;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse at center,rgba(247,147,26,0.05) 0%,rgba(255,98,0,0.025) 45%,transparent 70%);pointer-events:none;z-index:0}
+a{color:inherit;text-decoration:none}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;padding:0 clamp(20px,5vw,52px);justify-content:space-between}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray-metal);transition:color 0.15s}
+.back-link:hover{color:var(--orange)}
+.back-link::before{content:'←';color:var(--orange);font-size:14px}
+.topbar-right{display:flex;align-items:center;gap:24px}
+.topbar-brand{font-family:var(--font-display);font-size:15px;letter-spacing:0.22em;color:var(--gray-metal)}
+.topbar-brand span{color:var(--orange)}
+.topbar-cta{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;padding:9px 18px 8px;background:var(--orange);color:#000;border-radius:var(--radius);transition:background 0.15s}
+.topbar-cta:hover{background:var(--orange-hi)}
+@media(max-width:600px){.topbar-cta{display:none}}
+
+.page-wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:104px clamp(20px,5vw,48px) 80px}
+
+.page-header{margin-bottom:56px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.page-header::before{content:'';display:block;width:48px;height:3px;background:linear-gradient(90deg,var(--orange-dim),var(--gold));margin-bottom:32px}
+.label{font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:8px;margin-bottom:20px}
+.label::before{content:'';display:block;width:20px;height:1.5px;background:var(--gold);flex-shrink:0}
+.page-title{font-family:var(--font-display);font-size:clamp(48px,9vw,80px);letter-spacing:0.05em;text-transform:uppercase;line-height:0.92;margin-bottom:28px}
+.page-title .orange{color:var(--orange)}
+.page-title .gold{color:var(--gold)}
+.page-sub{font-family:var(--font-cond);font-weight:600;font-size:13px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray-metal)}
+
+.lead{font-family:var(--font-cond);font-weight:600;font-size:clamp(18px,2.5vw,22px);line-height:1.5;color:var(--gray-light);max-width:760px;margin-bottom:64px;padding-left:22px;border-left:3px solid var(--gold)}
+.lead strong{color:var(--white);font-weight:700}
+
+.section-label{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);margin-bottom:32px;display:flex;align-items:center;gap:12px}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border-hi)}
+
+/* Service tiles */
+.svc-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:64px}
+@media(min-width:760px){.svc-grid{grid-template-columns:1fr 1fr 1fr}}
+.svc-card{background:var(--surface);border:1px solid var(--border-hi);border-radius:var(--radius);padding:32px 28px;transition:all 0.2s;display:flex;flex-direction:column;gap:18px}
+.svc-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.svc-card.featured{border-color:var(--gold);background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%);box-shadow:0 0 0 1px rgba(247,147,26,0.18)}
+.svc-tag{font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold)}
+.svc-title{font-family:var(--font-display);font-size:24px;letter-spacing:0.05em;line-height:1.05;color:var(--white)}
+.svc-price{font-family:var(--font-display);font-size:30px;letter-spacing:0.04em;color:var(--orange);margin-top:4px}
+.svc-price-note{font-family:var(--font-cond);font-weight:600;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray-metal)}
+.svc-desc{font-size:14px;line-height:1.65;color:var(--gray-light);margin-bottom:8px}
+.svc-points{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.svc-points li{font-size:13px;line-height:1.55;color:var(--gray-light);padding-left:18px;position:relative}
+.svc-points li::before{content:'⚡';position:absolute;left:0;top:0;color:var(--gold);font-size:11px}
+.svc-link{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--orange);margin-top:auto;padding-top:8px}
+.svc-card.featured .svc-link{color:var(--gold)}
+
+/* Engagement framework */
+.framework{background:var(--surface);border:1px solid var(--border-hi);border-radius:var(--radius);padding:36px 32px;margin-bottom:48px}
+.framework-title{font-family:var(--font-display);font-size:28px;letter-spacing:0.06em;color:var(--white);margin-bottom:24px}
+.framework-row{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--border)}
+.framework-row:first-of-type{border-top:none}
+.framework-step{font-family:var(--font-cond);font-weight:900;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-top:2px}
+.framework-detail{font-size:14px;line-height:1.7;color:var(--gray-light)}
+.framework-detail strong{color:var(--white);font-weight:600}
+@media(max-width:600px){.framework-row{grid-template-columns:1fr;gap:6px}}
+
+/* Principles */
+.principles{display:grid;grid-template-columns:1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:64px}
+@media(min-width:760px){.principles{grid-template-columns:1fr 1fr}}
+.principle{background:var(--surface);padding:24px 28px}
+.principle-title{font-family:var(--font-cond);font-weight:900;font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.principle-desc{font-size:13.5px;line-height:1.7;color:var(--gray-light)}
+
+/* CTA */
+.cta-block{text-align:center;padding:48px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:24px}
+.cta-headline{font-family:var(--font-display);font-size:clamp(32px,5vw,48px);letter-spacing:0.06em;color:var(--white);margin-bottom:16px}
+.cta-headline .gold{color:var(--gold)}
+.cta-sub{font-size:15px;color:var(--gray-light);max-width:520px;margin:0 auto 28px;line-height:1.65}
+.cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-weight:700;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;padding:14px 28px 12px;border-radius:var(--radius);cursor:pointer;transition:all 0.2s ease;border:none}
+.btn-primary{background:var(--orange);color:#000}
+.btn-primary:hover{background:var(--orange-hi);transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,98,0,0.35)}
+.btn-ghost{background:transparent;color:var(--off-white);border:1.5px solid var(--border-hi)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+footer{padding:32px 0;border-top:1px solid var(--border);text-align:center;font-family:var(--font-cond);font-weight:600;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray-mid)}
+footer a{color:var(--gray-metal);transition:color 0.15s}
+footer a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="/index.html" class="back-link">Back to Home</a>
+  <div class="topbar-right">
+    <div class="topbar-brand">LIGHTNING <span>STRATEGIES</span></div>
+    <a href="/estimate.html" class="topbar-cta">Free Assessment →</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <div class="page-header">
+    <div class="label">Our Practice</div>
+    <h1 class="page-title">A Fractional <span class="gold">Chief Bitcoin Officer</span> for Self-Funded Employers</h1>
+    <div class="page-sub">Treasury · BLOC · Governance · Reporting</div>
+  </div>
+
+  <p class="lead"><strong>One firm. One discipline. One job: build a Bitcoin-powered treasury that compounds faster than your healthcare inflation.</strong> Sized to your actual claims volatility profile, paired with a BLOC credit facility, governed under a board-approved policy. You own the keys. You own the appreciation.</p>
+
+  <div class="section-label">Engagement Tracks</div>
+
+  <div class="svc-grid">
+
+    <a href="/estimate.html" class="svc-card featured">
+      <div>
+        <div class="svc-tag">⚡ Start Here · Free</div>
+        <div class="svc-title">Health Plan Treasury Assessment</div>
+        <div class="svc-price">FREE</div>
+        <div class="svc-price-note">24-Hour Turnaround</div>
+      </div>
+      <p class="svc-desc">Tell us about your self-funded plan. We build a custom advisory model showing what a sovereign Bitcoin treasury — sized to your actual annual claims spend — would look like.</p>
+      <ul class="svc-points">
+        <li>VOLT actuarial sizing against your claims volatility</li>
+        <li>BLOC liquidity scenario for the next 24 months</li>
+        <li>Net-of-fees CAGR comparison vs. T-bills + money markets</li>
+        <li>No obligation. No pitch. Just the math.</li>
+      </ul>
+      <span class="svc-link">Get Your Assessment →</span>
+    </a>
+
+    <a href="https://calendly.com/securestrategies-proton/30min" target="_blank" class="svc-card">
+      <div>
+        <div class="svc-tag">Phase 1 · Engagement</div>
+        <div class="svc-title">Bitcoin Treasury Setup</div>
+        <div class="svc-price">Contact</div>
+        <div class="svc-price-note">8–12 Week Buildout</div>
+      </div>
+      <p class="svc-desc">Full treasury policy buildout: actuarial sizing, custody architecture, board-approved governance framework, BLOC credit facility, and reporting infrastructure.</p>
+      <ul class="svc-points">
+        <li>VOLT v3.2 actuarial engine — Calibrate, Bound, Size, Monitor</li>
+        <li>Custody architecture (multi-sig, sovereign control)</li>
+        <li>BLOC facility setup with Strike Business or Unchained</li>
+        <li>Board-ready treasury policy + governance documentation</li>
+      </ul>
+      <span class="svc-link">Book a Call →</span>
+    </a>
+
+    <a href="https://calendly.com/securestrategies-proton/30min" target="_blank" class="svc-card">
+      <div>
+        <div class="svc-tag">Phase 2 · Ongoing</div>
+        <div class="svc-title">Fractional CBO Retainer</div>
+        <div class="svc-price">Contact</div>
+        <div class="svc-price-note">Monthly Engagement</div>
+      </div>
+      <p class="svc-desc">Ongoing strategic advisory: monthly performance reporting against claims trend, rebalancing decisions, BLOC drawdown strategy, and board-level treasury counsel.</p>
+      <ul class="svc-points">
+        <li>Monthly treasury performance vs. claims-trend benchmark</li>
+        <li>BLOC drawdown + repayment strategy</li>
+        <li>Quarterly board-level treasury review</li>
+        <li>Year-end tax positioning + rebalancing strategy</li>
+      </ul>
+      <span class="svc-link">Book a Call →</span>
+    </a>
+
+  </div>
+
+  <div class="section-label">How We Work</div>
+
+  <div class="framework">
+    <div class="framework-title">The 4-Step Engagement Framework</div>
+    <div class="framework-row">
+      <div class="framework-step">01 · Calibrate</div>
+      <div class="framework-detail"><strong>Free assessment first.</strong> We pull your claims data, run VOLT against your volatility profile, and show you what a Bitcoin treasury sized to your plan would look like. If the math doesn't work for you, we tell you before you spend a dollar.</div>
+    </div>
+    <div class="framework-row">
+      <div class="framework-step">02 · Bound</div>
+      <div class="framework-detail"><strong>Set the policy boundaries.</strong> Treasury allocation ceiling, BLOC drawdown rules, custody architecture, governance framework. Board-approved policy document. Risk parameters in writing.</div>
+    </div>
+    <div class="framework-row">
+      <div class="framework-step">03 · Size</div>
+      <div class="framework-detail"><strong>Build the position.</strong> Phased BTC accumulation aligned with your claims cycle. Custody setup. BLOC facility opened. Reporting infrastructure deployed. You hold the keys throughout.</div>
+    </div>
+    <div class="framework-row">
+      <div class="framework-step">04 · Monitor</div>
+      <div class="framework-detail"><strong>Compound and report.</strong> Monthly performance against your claims-trend benchmark. Quarterly governance review. Drawdown decisions. Tax positioning. You stay in control. We stay accountable to the math.</div>
+    </div>
+  </div>
+
+  <div class="section-label">Non-Negotiables</div>
+
+  <div class="principles">
+    <div class="principle">
+      <div class="principle-title">You Own It</div>
+      <div class="principle-desc">You hold the keys. You own the wallet. You own the appreciation. We are advisory only. No equity, no AUM grab, no custody by us. Sovereignty is the point.</div>
+    </div>
+    <div class="principle">
+      <div class="principle-title">No Subscriptions</div>
+      <div class="principle-desc">We don't sell software. We don't sell SaaS. We sell judgment, math, and accountability. The deliverables are yours forever — even if we part ways.</div>
+    </div>
+    <div class="principle">
+      <div class="principle-title">No Equity</div>
+      <div class="principle-desc">We don't take equity in your business. We don't get cap-table positions. The only alignment is the engagement contract and the math we sign our name to.</div>
+    </div>
+    <div class="principle">
+      <div class="principle-title">Math First</div>
+      <div class="principle-desc">If the model doesn't work for your plan, we walk. We show the model before the engagement, track it during, and prove it after. The math is the whole product.</div>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <h2 class="cta-headline">START WITH THE <span class="gold">MATH</span></h2>
+    <p class="cta-sub">Free Health Plan Treasury Assessment. 24-hour turnaround. No obligation, no pitch — just the model sized to your plan.</p>
+    <div class="cta-btns">
+      <a href="/estimate.html" class="btn btn-primary">Free Treasury Assessment →</a>
+      <a href="https://calendly.com/securestrategies-proton/30min" target="_blank" class="btn btn-ghost">Book a Strategy Call</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>⚡ Lightning Strategies · Fractional Chief Bitcoin Officer Advisory · Built for Founder-Led Self-Funded Employers</div>
+  <div style="margin-top:10px"><a href="/index.html">Home</a> &middot; <a href="/about.html">About</a> &middot; <a href="/philosophy.html">Philosophy</a> &middot; <a href="/estimate.html">Free Assessment</a></div>
+</footer>
+
+</body>
+</html>
