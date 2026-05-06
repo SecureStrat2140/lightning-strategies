@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advisory Council — Lightning Strategies</title>
+<meta name="description" content="The Lightning Strategies advisory council — a founder-led firm with four strategic advisor seats spanning institutional banking, tax strategy, corporate law, and Bitcoin treasury practice. Composition finalizing post May 26, 2026.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9889;</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4FMDQ41MK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4FMDQ41MK1');
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --orange:#FF6200;--orange-hi:#FF8040;--orange-dim:#C44D00;
+  --gold:#F7931A;--gold-hi:#FFB347;--gold-dim:rgba(247,147,26,0.15);
+  --black:#080808;--ink:#0D0D0D;--surface:#111111;--surface-2:#161616;--surface-3:#1C1C1C;
+  --border:#202020;--border-hi:#2C2C2C;--gray-mid:#505050;--gray-metal:#747474;--gray-light:#ABABAB;
+  --white:#FFFFFF;--off-white:#EEEEEE;
+  --font-display:'Bebas Neue',sans-serif;--font-cond:'Barlow Condensed',sans-serif;--font-body:'Barlow',sans-serif;
+  --radius:3px;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--black);color:var(--off-white);font-family:var(--font-body);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:'';position:fixed;top:-10%;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse at center,rgba(247,147,26,0.05) 0%,rgba(255,98,0,0.025) 45%,transparent 70%);pointer-events:none;z-index:0}
+a{color:inherit;text-decoration:none}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;padding:0 clamp(20px,5vw,52px);justify-content:space-between}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray-metal);transition:color 0.15s}
+.back-link:hover{color:var(--orange)}
+.back-link::before{content:'←';color:var(--orange);font-size:14px}
+.topbar-right{display:flex;align-items:center;gap:24px}
+.topbar-brand{font-family:var(--font-display);font-size:15px;letter-spacing:0.22em;color:var(--gray-metal)}
+.topbar-brand span{color:var(--orange)}
+.topbar-cta{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;padding:9px 18px 8px;background:var(--orange);color:#000;border-radius:var(--radius);transition:background 0.15s}
+.topbar-cta:hover{background:var(--orange-hi)}
+@media(max-width:600px){.topbar-cta{display:none}}
+
+.page-wrap{position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:104px clamp(20px,5vw,48px) 80px}
+
+.page-header{margin-bottom:56px;padding-bottom:48px;border-bottom:1px solid var(--border);text-align:center}
+.page-header::before{content:'';display:block;width:48px;height:3px;background:linear-gradient(90deg,var(--orange-dim),var(--gold));margin:0 auto 32px}
+.label{font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:8px;margin-bottom:20px}
+.label::before{content:'';display:block;width:20px;height:1.5px;background:var(--gold);flex-shrink:0}
+.page-title{font-family:var(--font-display);font-size:clamp(48px,9vw,80px);letter-spacing:0.05em;text-transform:uppercase;line-height:0.92;margin-bottom:24px}
+.page-title .gold{color:var(--gold)}
+.page-sub{font-family:var(--font-cond);font-weight:600;font-size:13px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray-metal);max-width:680px;margin:0 auto 12px}
+.page-desc{font-size:15px;color:var(--gray-light);max-width:640px;margin:18px auto 0;line-height:1.7}
+
+/* Founder hero card */
+.founder-card{position:relative;display:flex;flex-direction:column;gap:24px;background:linear-gradient(135deg,rgba(247,147,26,0.08),rgba(255,98,0,0.05));border:1px solid rgba(247,147,26,0.45);border-radius:8px;padding:36px clamp(24px,4vw,48px);margin-bottom:48px;overflow:hidden}
+.founder-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--gold));border-radius:8px 8px 0 0}
+@media(min-width:760px){.founder-card{flex-direction:row;align-items:flex-start;gap:36px}}
+.founder-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--surface-3),var(--ink));border:1.5px solid rgba(247,147,26,0.45);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--font-display);font-size:26px;letter-spacing:0.08em;flex-shrink:0}
+.founder-body{flex:1}
+.founder-role{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.founder-name{font-family:var(--font-display);font-size:clamp(28px,4vw,38px);letter-spacing:0.05em;color:var(--white);line-height:1;margin-bottom:14px}
+.founder-desc{font-size:14.5px;line-height:1.7;color:var(--gray-light);margin-bottom:18px}
+.founder-hats{display:flex;flex-wrap:wrap;gap:8px}
+.founder-hat{font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;padding:5px 11px;border-radius:2px}
+.hat-health{background:rgba(255,98,0,0.15);color:var(--orange);border:1px solid rgba(255,98,0,0.3)}
+.hat-btc{background:rgba(247,147,26,0.15);color:var(--gold);border:1px solid rgba(247,147,26,0.3)}
+
+/* Section divider */
+.council-label{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);margin:8px 0 32px;display:flex;align-items:center;gap:12px}
+.council-label::after{content:'';flex:1;height:1px;background:var(--border-hi)}
+
+/* Advisor grid (4-up) */
+.adv-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:600px){.adv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.adv-grid{grid-template-columns:repeat(4,1fr)}}
+.adv-card{position:relative;background:var(--surface-2);border:1.5px dashed var(--border-hi);border-radius:6px;padding:28px 22px;display:flex;flex-direction:column;align-items:flex-start;transition:all 0.2s;opacity:0.85}
+.adv-card:hover{border-color:var(--gold);opacity:1}
+.adv-avatar{width:56px;height:56px;border-radius:50%;background:rgba(247,147,26,0.06);border:1px solid var(--border-hi);display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--gray-metal);font-family:var(--font-display);font-size:20px;letter-spacing:0.08em}
+.adv-card.alt .adv-avatar{background:rgba(255,98,0,0.06)}
+.adv-role{font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.adv-name{font-family:var(--font-display);font-size:22px;letter-spacing:0.05em;color:var(--gray-metal);margin-bottom:6px;line-height:1.05}
+.adv-firm{font-family:var(--font-cond);font-weight:600;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray-metal);margin-bottom:14px}
+.adv-desc{font-size:13px;color:var(--gray-light);line-height:1.6}
+.adv-status{font-family:var(--font-cond);font-weight:700;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);padding:4px 10px;border:1px solid rgba(247,147,26,0.3);border-radius:2px;background:rgba(247,147,26,0.08);margin-top:14px;align-self:flex-start}
+
+/* Pillars */
+.pillars{display:grid;grid-template-columns:1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:48px 0 32px}
+@media(min-width:760px){.pillars{grid-template-columns:repeat(4,1fr)}}
+.pillar{background:var(--surface);padding:22px 24px;text-align:center}
+.pillar-num{font-family:var(--font-display);font-size:22px;color:var(--gold);letter-spacing:0.04em;margin-bottom:6px}
+.pillar-title{font-family:var(--font-cond);font-weight:900;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--white);margin-bottom:6px}
+.pillar-sub{font-size:12px;color:var(--gray-light);line-height:1.5}
+
+.note{font-size:13px;color:var(--gray-mid);text-align:center;font-style:italic;margin-top:20px}
+
+/* CTA */
+.cta-block{text-align:center;padding:48px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:48px}
+.cta-headline{font-family:var(--font-display);font-size:clamp(32px,5vw,48px);letter-spacing:0.06em;color:var(--white);margin-bottom:16px}
+.cta-headline .gold{color:var(--gold)}
+.cta-sub{font-size:15px;color:var(--gray-light);max-width:520px;margin:0 auto 28px;line-height:1.65}
+.cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-weight:700;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;padding:14px 28px 12px;border-radius:var(--radius);cursor:pointer;transition:all 0.2s ease;border:none}
+.btn-primary{background:var(--orange);color:#000}
+.btn-primary:hover{background:var(--orange-hi);transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,98,0,0.35)}
+.btn-ghost{background:transparent;color:var(--off-white);border:1.5px solid var(--border-hi)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+footer{padding:32px 0;border-top:1px solid var(--border);text-align:center;font-family:var(--font-cond);font-weight:600;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray-mid)}
+footer a{color:var(--gray-metal);transition:color 0.15s}
+footer a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="/index.html" class="back-link">Back to Home</a>
+  <div class="topbar-right">
+    <div class="topbar-brand">LIGHTNING <span>STRATEGIES</span></div>
+    <a href="/estimate.html" class="topbar-cta">Free Assessment →</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <div class="page-header">
+    <div class="label">Advisory Council</div>
+    <h1 class="page-title">STRATEGIC GUIDANCE<br><span class="gold">FROM PRACTITIONERS</span></h1>
+    <p class="page-sub">Founder-Led · Four Strategic Advisor Seats · Decades of Field-Tested Judgment</p>
+    <p class="page-desc">Lightning Strategies is a practitioner-led firm. We are finance experts solving for healthcare inflation. You keep your incumbent broker. We solve the reserve problem they can&rsquo;t.</p>
+  </div>
+
+  <div class="founder-card">
+    <div class="founder-avatar">JS</div>
+    <div class="founder-body">
+      <div class="founder-role">Founder &amp; Chief Bitcoin Officer</div>
+      <div class="founder-name">Jared Selewski</div>
+      <p class="founder-desc">Veteran employee benefits consultant with over a decade of experience across the world&rsquo;s top global insurance brokerages, including firms ranked #1, #3, and #6 globally. Combines deep expertise in self-funded and level-funded health plans with Bitcoin treasury strategy (practitioner since 2017). Leads Lightning Strategies as a Chief Bitcoin Officer advisory firm serving founder-led middle-market employers building for independence, control, and structural advantage against healthcare inflation.</p>
+      <div class="founder-hats">
+        <span class="founder-hat hat-health">&#9889; Healthcare &amp; Benefits</span>
+        <span class="founder-hat hat-btc">&#9735; Bitcoin &amp; Custody</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="council-label">Strategic Advisor Seats</div>
+
+  <div class="adv-grid">
+
+    <div class="adv-card">
+      <div class="adv-avatar">I</div>
+      <div class="adv-role">Strategic Advisor</div>
+      <div class="adv-name">Seat I</div>
+      <div class="adv-firm">Institutional Banking</div>
+      <p class="adv-desc">Seat reserved for an advisor with deep institutional banking and credit-facility expertise. Focused on BLOC structuring, lender relationships, and capital-stack positioning.</p>
+      <div class="adv-status">Reserved</div>
+    </div>
+
+    <div class="adv-card alt">
+      <div class="adv-avatar">II</div>
+      <div class="adv-role">Strategic Advisor</div>
+      <div class="adv-name">Seat II</div>
+      <div class="adv-firm">Tax Strategy</div>
+      <p class="adv-desc">Seat reserved for an advisor with senior tax-strategy practice. Focused on treasury tax positioning, year-end rebalancing, and entity-level Bitcoin treatment for self-funded employers.</p>
+      <div class="adv-status">Reserved</div>
+    </div>
+
+    <div class="adv-card">
+      <div class="adv-avatar">III</div>
+      <div class="adv-role">Strategic Advisor</div>
+      <div class="adv-name">Seat III</div>
+      <div class="adv-firm">Corporate Law</div>
+      <p class="adv-desc">Seat reserved for an advisor with corporate-law practice in fiduciary and ERISA-adjacent matters. Focused on board governance, treasury policy, and trust-structure design.</p>
+      <div class="adv-status">Reserved</div>
+    </div>
+
+    <div class="adv-card alt">
+      <div class="adv-avatar">IV</div>
+      <div class="adv-role">Strategic Advisor</div>
+      <div class="adv-name">Seat IV</div>
+      <div class="adv-firm">Bitcoin Treasury Practice</div>
+      <p class="adv-desc">Seat reserved for an advisor with hands-on Bitcoin treasury, custody, and operational practice. Focused on multi-sig architecture, vendor selection, and reporting infrastructure.</p>
+      <div class="adv-status">Reserved</div>
+    </div>
+
+  </div>
+
+  <div class="pillars">
+    <div class="pillar"><div class="pillar-num">01</div><div class="pillar-title">Banking</div><div class="pillar-sub">BLOC structuring + credit relationships</div></div>
+    <div class="pillar"><div class="pillar-num">02</div><div class="pillar-title">Tax</div><div class="pillar-sub">Treasury tax positioning + rebalancing</div></div>
+    <div class="pillar"><div class="pillar-num">03</div><div class="pillar-title">Law</div><div class="pillar-sub">Board governance + treasury policy</div></div>
+    <div class="pillar"><div class="pillar-num">04</div><div class="pillar-title">Practice</div><div class="pillar-sub">Custody + operational infrastructure</div></div>
+  </div>
+
+  <p class="note">Council composition + per-seat scope finalizing post May 26, 2026 advisor working session.</p>
+
+  <div class="cta-block">
+    <h2 class="cta-headline">SEE IF THE <span class="gold">MATH WORKS</span></h2>
+    <p class="cta-sub">Free Health Plan Treasury Assessment. 24-hour turnaround. Sized to your plan. No obligation, no pitch.</p>
+    <div class="cta-btns">
+      <a href="/estimate.html" class="btn btn-primary">Free Treasury Assessment →</a>
+      <a href="https://calendly.com/securestrategies-proton/30min" target="_blank" class="btn btn-ghost">Book a Strategy Call</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>⚡ Lightning Strategies · Fractional Chief Bitcoin Officer Advisory · Built for Founder-Led Self-Funded Employers</div>
+  <div style="margin-top:10px"><a href="/index.html">Home</a> &middot; <a href="/our-practice.html">Our Practice</a> &middot; <a href="/about.html">About</a> &middot; <a href="/the-math.html">The Math</a> &middot; <a href="/philosophy.html">Philosophy</a></div>
+</footer>
+
+</body>
+</html>

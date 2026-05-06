@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Math — Lightning Strategies</title>
+<meta name="description" content="The math behind a Bitcoin-powered treasury for self-funded employers. Healthcare inflation runs 6.5–9.5% annually. T-bills yield 4–5%. Bitcoin has compounded 20–45%+ CAGR over every 4-year rolling period. Here's what that means for your reserves.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9889;</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4FMDQ41MK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4FMDQ41MK1');
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --orange:#FF6200;--orange-hi:#FF8040;--orange-dim:#C44D00;
+  --gold:#F7931A;--gold-hi:#FFB347;--gold-dim:rgba(247,147,26,0.15);
+  --black:#080808;--ink:#0D0D0D;--surface:#111111;--surface-2:#161616;--surface-3:#1C1C1C;
+  --border:#202020;--border-hi:#2C2C2C;--gray-mid:#505050;--gray-metal:#747474;--gray-light:#ABABAB;
+  --white:#FFFFFF;--off-white:#EEEEEE;--red:#E53935;--green:#43A047;
+  --font-display:'Bebas Neue',sans-serif;--font-cond:'Barlow Condensed',sans-serif;--font-body:'Barlow',sans-serif;
+  --radius:3px;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--black);color:var(--off-white);font-family:var(--font-body);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:'';position:fixed;top:-10%;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse at center,rgba(247,147,26,0.05) 0%,rgba(255,98,0,0.025) 45%,transparent 70%);pointer-events:none;z-index:0}
+a{color:inherit;text-decoration:none}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;padding:0 clamp(20px,5vw,52px);justify-content:space-between}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray-metal);transition:color 0.15s}
+.back-link:hover{color:var(--orange)}
+.back-link::before{content:'←';color:var(--orange);font-size:14px}
+.topbar-right{display:flex;align-items:center;gap:24px}
+.topbar-brand{font-family:var(--font-display);font-size:15px;letter-spacing:0.22em;color:var(--gray-metal)}
+.topbar-brand span{color:var(--orange)}
+.topbar-cta{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;padding:9px 18px 8px;background:var(--orange);color:#000;border-radius:var(--radius);transition:background 0.15s}
+.topbar-cta:hover{background:var(--orange-hi)}
+@media(max-width:600px){.topbar-cta{display:none}}
+
+.page-wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:104px clamp(20px,5vw,48px) 80px}
+
+.page-header{margin-bottom:56px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.page-header::before{content:'';display:block;width:48px;height:3px;background:linear-gradient(90deg,var(--orange-dim),var(--gold));margin-bottom:32px}
+.label{font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:8px;margin-bottom:20px}
+.label::before{content:'';display:block;width:20px;height:1.5px;background:var(--gold);flex-shrink:0}
+.page-title{font-family:var(--font-display);font-size:clamp(48px,9vw,84px);letter-spacing:0.05em;text-transform:uppercase;line-height:0.92;margin-bottom:24px}
+.page-title .gold{color:var(--gold)}
+.page-sub{font-family:var(--font-cond);font-weight:600;font-size:13px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray-metal)}
+
+.lead{font-family:var(--font-cond);font-weight:600;font-size:clamp(18px,2.5vw,22px);line-height:1.5;color:var(--gray-light);max-width:760px;margin-bottom:52px;padding-left:22px;border-left:3px solid var(--gold)}
+.lead strong{color:var(--white);font-weight:700}
+
+.section-label{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--orange);margin:48px 0 28px;display:flex;align-items:center;gap:12px}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border-hi)}
+
+/* Math block */
+.math-block{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:48px}
+@media(min-width:840px){.math-block{grid-template-columns:1fr 1fr}}
+.math-card{background:var(--surface);border:1px solid var(--border-hi);border-radius:var(--radius);padding:32px}
+.math-eyebrow{font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:var(--gray-metal);margin-bottom:18px}
+.math-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--border);font-size:13.5px;gap:12px}
+.math-row:last-child{border-bottom:none}
+.math-row .lbl{color:var(--gray-light)}
+.math-row .val{font-family:var(--font-cond);font-weight:700;color:var(--off-white);white-space:nowrap}
+.math-row .red{color:var(--red)}
+.math-row .green{color:var(--green)}
+.math-row .gold{color:var(--gold)}
+.math-divider{height:1px;background:var(--border);margin:8px 0}
+.math-total{display:flex;justify-content:space-between;align-items:center;padding:16px 0 4px;margin-top:10px;border-top:1.5px solid var(--gold);font-family:var(--font-cond);font-weight:700;font-size:14px;letter-spacing:0.18em;text-transform:uppercase}
+.math-total .lbl{color:var(--white)}
+.math-total .val{color:var(--gold);font-size:20px}
+.math-note{font-size:11.5px;color:var(--gray-mid);margin-top:16px;text-align:center;line-height:1.55}
+.math-explainer p{font-size:15px;line-height:1.8;color:var(--gray-light);margin-bottom:16px}
+.math-explainer p strong{color:var(--white)}
+.math-explainer p em{color:var(--gold);font-style:normal}
+
+/* Before/After grid */
+.ba-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-bottom:48px}
+@media(min-width:760px){.ba-grid{grid-template-columns:1fr 1fr}}
+.ba-col{padding:32px;border-radius:var(--radius);border:1.5px solid}
+.ba-col.before{background:rgba(229,57,53,0.06);border-color:rgba(229,57,53,0.25)}
+.ba-col.after{background:rgba(67,160,71,0.06);border-color:rgba(67,160,71,0.25)}
+.ba-title{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.4em;text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.ba-col.before .ba-title{color:var(--red)}
+.ba-col.after .ba-title{color:var(--green)}
+.ba-title::before{content:'';width:8px;height:8px;border-radius:50%}
+.ba-col.before .ba-title::before{background:var(--red)}
+.ba-col.after .ba-title::before{background:var(--green)}
+.ba-item{font-size:14px;line-height:1.6;color:var(--off-white);padding:11px 0;border-top:1px solid rgba(255,255,255,0.06);display:flex;gap:12px;align-items:flex-start}
+.ba-item:first-of-type{border-top:none}
+.ba-mark{flex-shrink:0;font-weight:700;font-size:14px;line-height:1.4}
+.ba-col.before .ba-mark{color:var(--red)}
+.ba-col.after .ba-mark{color:var(--green)}
+
+/* Principle quote */
+.principle{background:var(--surface);border:1px solid var(--border-hi);border-left:3px solid var(--orange);border-radius:var(--radius);padding:28px 32px;margin:8px 0 48px}
+.principle p{font-family:var(--font-cond);font-weight:700;font-size:clamp(17px,2.4vw,22px);line-height:1.5;letter-spacing:0.03em;color:var(--white);margin:0;font-style:italic}
+
+/* CTA */
+.cta-block{text-align:center;padding:48px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:24px}
+.cta-headline{font-family:var(--font-display);font-size:clamp(32px,5vw,48px);letter-spacing:0.06em;color:var(--white);margin-bottom:16px}
+.cta-headline .gold{color:var(--gold)}
+.cta-sub{font-size:15px;color:var(--gray-light);max-width:520px;margin:0 auto 28px;line-height:1.65}
+.cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-weight:700;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;padding:14px 28px 12px;border-radius:var(--radius);cursor:pointer;transition:all 0.2s ease;border:none}
+.btn-primary{background:var(--orange);color:#000}
+.btn-primary:hover{background:var(--orange-hi);transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,98,0,0.35)}
+.btn-ghost{background:transparent;color:var(--off-white);border:1.5px solid var(--border-hi)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+footer{padding:32px 0;border-top:1px solid var(--border);text-align:center;font-family:var(--font-cond);font-weight:600;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray-mid)}
+footer a{color:var(--gray-metal);transition:color 0.15s}
+footer a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="/index.html" class="back-link">Back to Home</a>
+  <div class="topbar-right">
+    <div class="topbar-brand">LIGHTNING <span>STRATEGIES</span></div>
+    <a href="/estimate.html" class="topbar-cta">Free Assessment →</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <div class="page-header">
+    <div class="label">The Math</div>
+    <h1 class="page-title">WHY BITCOIN<br><span class="gold">BEATS INFLATION</span></h1>
+    <div class="page-sub">Healthcare Inflation · Reserve Yield · Compounding Math</div>
+  </div>
+
+  <p class="lead"><strong>Healthcare inflation runs 6.5&ndash;9.5% annually. Traditional reserves yield 4&ndash;5%. That gap compounds against you every year.</strong> Bitcoin has delivered a 20&ndash;45%+ CAGR over every 4-year rolling period in its history. Even at the conservative end, a Bitcoin treasury structurally outpaces healthcare inflation &mdash; turning a losing game into a winning one.</p>
+
+  <div class="section-label">A Worked Example</div>
+
+  <div class="math-block">
+    <div class="math-card">
+      <div class="math-eyebrow">Example: 500-Employee Self-Funded Plan</div>
+      <div class="math-row"><span class="lbl">Annual health plan spend</span><span class="val">$6,000,000</span></div>
+      <div class="math-row"><span class="lbl">Annual trend increase (8%)</span><span class="val red">+$480,000</span></div>
+      <div class="math-row"><span class="lbl">Traditional reserves yield (T-bills, ~4.5%)</span><span class="val green">+$45,000</span></div>
+      <div class="math-row"><span class="lbl">Net gap (inflation outpaces reserves)</span><span class="val red">&minus;$435,000</span></div>
+      <div class="math-divider"></div>
+      <div class="math-row"><span class="lbl">Bitcoin treasury yield (conservative 20% CAGR)</span><span class="val gold">+$200,000</span></div>
+      <div class="math-row"><span class="lbl">Bitcoin treasury yield (base 30% CAGR)</span><span class="val gold">+$300,000</span></div>
+      <div class="math-total"><span class="lbl">Net Advantage vs. T-Bills</span><span class="val">$155K&ndash;$255K</span></div>
+      <p class="math-note">Illustrative example. Based on $1M BTC treasury allocation. Actual results vary by allocation size and market conditions.</p>
+    </div>
+
+    <div class="math-explainer">
+      <p><strong>The core insight is simple.</strong> Healthcare inflation runs 6.5&ndash;9.5% annually. Traditional reserve instruments (money markets, T-bills) yield 4&ndash;5%. <em>That gap compounds against you every year.</em></p>
+      <p>Bitcoin has delivered a 20&ndash;45%+ CAGR over every 4-year rolling period in its history. Even at the conservative end, a Bitcoin treasury structurally outpaces healthcare inflation &mdash; turning a losing game into a winning one.</p>
+      <p>The BLOC credit facility means you <strong>never have to sell your Bitcoin</strong> to fund claims. You draw fiat against your position, pay claims, and let the treasury keep compounding. This is a fundamental rethink of how self-funded employers manage reserve capital.</p>
+      <p>Middle-market self-funded employers with 200 to 1,000 employees are the most underserved segment. Jumbo employers have treasury teams. <strong>You get ignored.</strong> That&rsquo;s exactly why we exist.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Before vs. After</div>
+
+  <div class="ba-grid">
+    <div class="ba-col before">
+      <div class="ba-title">Before &mdash; The Status Quo</div>
+      <div class="ba-item"><span class="ba-mark">&times;</span><span>Claims costs rising 6.5&ndash;9.5% annually while cash reserves can&rsquo;t keep pace</span></div>
+      <div class="ba-item"><span class="ba-mark">&times;</span><span>CFO holds reserves in money markets or T-bills yielding 4&ndash;5%, a net negative against trend</span></div>
+      <div class="ba-item"><span class="ba-mark">&times;</span><span>Every renewal cycle is a fire drill. Stop-loss premiums spike and budgets blow up</span></div>
+      <div class="ba-item"><span class="ba-mark">&times;</span><span>No treasury strategy exists. Reserves sit idle, losing purchasing power every month</span></div>
+      <div class="ba-item"><span class="ba-mark">&times;</span><span>&ldquo;We looked at Bitcoin&rdquo; = CEO read a headline and nobody followed through</span></div>
+    </div>
+    <div class="ba-col after">
+      <div class="ba-title">After &mdash; With Your Fractional CBO</div>
+      <div class="ba-item"><span class="ba-mark">&check;</span><span>Bitcoin treasury grows at 20&ndash;45%+ CAGR historically &mdash; structurally outpacing claims inflation</span></div>
+      <div class="ba-item"><span class="ba-mark">&check;</span><span>BLOC credit facility lets you draw fiat against BTC to fund claims without selling your position</span></div>
+      <div class="ba-item"><span class="ba-mark">&check;</span><span>Renewal cycles become strategic. Treasury appreciation funds higher attachment points and better terms</span></div>
+      <div class="ba-item"><span class="ba-mark">&check;</span><span>Board-approved treasury policy in place: risk framework, custody, reporting, governance</span></div>
+      <div class="ba-item"><span class="ba-mark">&check;</span><span>Monthly performance reports vs. claims trend. Tax positioning. Rebalancing strategy. You stay in control.</span></div>
+    </div>
+  </div>
+
+  <div class="principle">
+    <p>&ldquo;If the math doesn&rsquo;t work for your plan, I&rsquo;ll tell you before you spend a dollar. We show the model before the engagement, track it during, and prove it after.&rdquo;</p>
+  </div>
+
+  <div class="cta-block">
+    <h2 class="cta-headline">RUN THE MATH ON <span class="gold">YOUR PLAN</span></h2>
+    <p class="cta-sub">Free Health Plan Treasury Assessment. We size a Bitcoin treasury against your actual claims data and deliver the model in 24 hours. No obligation, no pitch.</p>
+    <div class="cta-btns">
+      <a href="/estimate.html" class="btn btn-primary">Free Treasury Assessment →</a>
+      <a href="https://calendly.com/securestrategies-proton/30min" target="_blank" class="btn btn-ghost">Book a Strategy Call</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>⚡ Lightning Strategies · Fractional Chief Bitcoin Officer Advisory · Built for Founder-Led Self-Funded Employers</div>
+  <div style="margin-top:10px"><a href="/index.html">Home</a> &middot; <a href="/our-practice.html">Our Practice</a> &middot; <a href="/about.html">About</a> &middot; <a href="/advisory-council.html">Advisory Council</a> &middot; <a href="/philosophy.html">Philosophy</a></div>
+</footer>
+
+</body>
+</html>
