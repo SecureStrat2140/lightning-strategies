@@ -87,6 +87,40 @@ a{color:inherit;text-decoration:none}
 .framework-detail strong{color:var(--white);font-weight:600}
 @media(max-width:600px){.framework-row{grid-template-columns:1fr;gap:6px}}
 
+/* Math block */
+.math-block{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:64px}
+@media(min-width:760px){.math-block{grid-template-columns:1fr 1fr}}
+.math-card{background:var(--surface);border:1px solid var(--border-hi);border-radius:var(--radius);padding:28px}
+.math-eyebrow{font-family:var(--font-cond);font-weight:700;font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:var(--gray-metal);margin-bottom:16px}
+.math-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.math-row:last-child{border-bottom:none}
+.math-row .lbl{color:var(--gray-light)}
+.math-row .val{font-family:var(--font-cond);font-weight:700;color:var(--off-white)}
+.math-row .red{color:#E53935}
+.math-row .green{color:#43A047}
+.math-row .gold{color:var(--gold)}
+.math-total{display:flex;justify-content:space-between;align-items:center;padding:14px 0 4px;margin-top:8px;border-top:1.5px solid var(--gold);font-family:var(--font-cond);font-weight:700;font-size:13px;letter-spacing:0.18em;text-transform:uppercase}
+.math-total .lbl{color:var(--white)}
+.math-total .val{color:var(--gold);font-size:18px}
+.math-note{font-size:11px;color:var(--gray-mid);margin-top:14px;text-align:center;line-height:1.5}
+.math-explainer p{font-size:14.5px;line-height:1.75;color:var(--gray-light);margin-bottom:14px}
+.math-explainer p strong{color:var(--white)}
+
+/* Before/After strip */
+.ba-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:64px}
+@media(min-width:760px){.ba-grid{grid-template-columns:1fr 1fr}}
+.ba-col{padding:28px;border-radius:var(--radius);border:1.5px solid}
+.ba-col.before{background:rgba(229,57,53,0.08);border-color:rgba(229,57,53,0.25)}
+.ba-col.after{background:rgba(67,160,71,0.08);border-color:rgba(67,160,71,0.25)}
+.ba-title{font-family:var(--font-cond);font-weight:700;font-size:11px;letter-spacing:0.4em;text-transform:uppercase;margin-bottom:18px}
+.ba-col.before .ba-title{color:#E53935}
+.ba-col.after .ba-title{color:#43A047}
+.ba-item{font-size:13.5px;line-height:1.55;color:var(--off-white);padding:10px 0;border-top:1px solid rgba(255,255,255,0.06);display:flex;gap:10px}
+.ba-item:first-of-type{border-top:none}
+.ba-mark{flex-shrink:0;font-weight:700}
+.ba-col.before .ba-mark{color:#E53935}
+.ba-col.after .ba-mark{color:#43A047}
+
 /* Principles */
 .principles{display:grid;grid-template-columns:1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:64px}
 @media(min-width:760px){.principles{grid-template-columns:1fr 1fr}}
@@ -130,6 +164,49 @@ footer a:hover{color:var(--gold)}
   </div>
 
   <p class="lead"><strong>One firm. One discipline. One job: build a Bitcoin-powered treasury that compounds faster than your healthcare inflation.</strong> Sized to your actual claims volatility profile, paired with a BLOC credit facility, governed under a board-approved policy. You own the keys. You own the appreciation.</p>
+
+  <div class="section-label" id="math">The Math</div>
+
+  <div class="math-block">
+    <div class="math-card">
+      <div class="math-eyebrow">Example: 500-Employee Self-Funded Plan</div>
+      <div class="math-row"><span class="lbl">Annual health plan spend</span><span class="val">$6,000,000</span></div>
+      <div class="math-row"><span class="lbl">Annual trend increase (8%)</span><span class="val red">+$480,000</span></div>
+      <div class="math-row"><span class="lbl">Traditional reserves yield (T-bills, ~4.5%)</span><span class="val green">+$45,000</span></div>
+      <div class="math-row"><span class="lbl">Net gap (inflation outpaces reserves)</span><span class="val red">&minus;$435,000</span></div>
+      <div class="math-row"><span class="lbl">Bitcoin treasury yield (conservative 20% CAGR)</span><span class="val gold">+$200,000</span></div>
+      <div class="math-row"><span class="lbl">Bitcoin treasury yield (base 30% CAGR)</span><span class="val gold">+$300,000</span></div>
+      <div class="math-total"><span class="lbl">Net Advantage vs. T-Bills</span><span class="val">$155K&ndash;$255K</span></div>
+      <p class="math-note">Illustrative example. Based on $1M BTC treasury allocation. Actual results vary by allocation size and market conditions.</p>
+    </div>
+    <div class="math-explainer">
+      <p><strong>The core insight is simple:</strong> healthcare inflation runs 6.5&ndash;9.5% annually. Traditional reserve instruments (money markets, T-bills) yield 4&ndash;5%. That gap compounds against you every year.</p>
+      <p>Bitcoin has delivered a 20&ndash;45%+ CAGR over every 4-year rolling period in its history. Even at the conservative end, a Bitcoin treasury structurally outpaces healthcare inflation &mdash; turning a losing game into a winning one.</p>
+      <p>The BLOC credit facility means you <strong>never have to sell your Bitcoin</strong> to fund claims. You draw fiat against your position, pay claims, and let the treasury keep compounding. This is a fundamental rethink of how self-funded employers manage reserve capital.</p>
+      <p>Middle-market self-funded employers with 200 to 1,000 employees are the most underserved segment. Jumbo employers have treasury teams. <strong>You get ignored.</strong> That&rsquo;s exactly why we exist.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Before vs. After</div>
+
+  <div class="ba-grid">
+    <div class="ba-col before">
+      <div class="ba-title">Before &mdash; The Status Quo</div>
+      <div class="ba-item"><span class="ba-mark">&times;</span><span>Claims costs rising 6.5&ndash;9.5% annually while cash reserves can&rsquo;t keep pace</span></div>
+      <div class="ba-item"><span class="ba-mark">&times;</span><span>CFO holds reserves in money markets or T-bills yielding 4&ndash;5%, a net negative against trend</span></div>
+      <div class="ba-item"><span class="ba-mark">&times;</span><span>Every renewal cycle is a fire drill. Stop-loss premiums spike and budgets blow up</span></div>
+      <div class="ba-item"><span class="ba-mark">&times;</span><span>No treasury strategy exists. Reserves sit idle, losing purchasing power every month</span></div>
+      <div class="ba-item"><span class="ba-mark">&times;</span><span>&ldquo;We looked at Bitcoin&rdquo; = CEO read a headline and nobody followed through</span></div>
+    </div>
+    <div class="ba-col after">
+      <div class="ba-title">After &mdash; With Your Fractional CBO</div>
+      <div class="ba-item"><span class="ba-mark">&check;</span><span>Bitcoin treasury grows at 20&ndash;45%+ CAGR historically &mdash; structurally outpacing claims inflation</span></div>
+      <div class="ba-item"><span class="ba-mark">&check;</span><span>BLOC credit facility lets you draw fiat against BTC to fund claims without selling your position</span></div>
+      <div class="ba-item"><span class="ba-mark">&check;</span><span>Renewal cycles become strategic. Treasury appreciation funds higher attachment points and better terms</span></div>
+      <div class="ba-item"><span class="ba-mark">&check;</span><span>Board-approved treasury policy in place: risk framework, custody, reporting, governance</span></div>
+      <div class="ba-item"><span class="ba-mark">&check;</span><span>Monthly performance reports vs. claims trend. Tax positioning. Rebalancing strategy. You stay in control.</span></div>
+    </div>
+  </div>
 
   <div class="section-label">Engagement Tracks</div>
 
